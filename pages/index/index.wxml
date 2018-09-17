@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="searchBox">
+      <view class="selects">
+          选择字体：<picker bindchange="bindPickerChange" value="{{index}}" name="font" range-key="title" range="{{objectArray}}">
+            <view class="picker">
+              {{objectArray[index].title}}
+            </view>
+          </picker>
+      </view>
+      <view class="sname">
+        <input name="text" class="stext" maxlength="4" placeholder="请输入您的姓名" />
+      </view>
+    </view>
+    <view class="buttonWrap">
+      <button class="sbutton" formType="submit" type="warn"> 立即设计 </button>
+    </view>
+  </form>
+  <view wx:if='{{createdImg}}' class="alignCenter">
+    <image src='{{createdImg}}' mode="center"></image>
+    <button open-type="share" size='mini'type="primary">分享给好友</button>
+  </view>
+</view>
