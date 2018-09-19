@@ -49,7 +49,7 @@
     </view>
     
     <view class="buttonWrap">
-      <button class="sbutton" formType="submit" type="warn"> 立即设计 </button>
+      <button class="sbutton" formType="submit" type="warn"> 立即设计生成艺术字 </button>
     </view>
   </form>
   <view wx:if='{{createdImg}}' class="alignCenter">
