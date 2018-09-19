@@ -9,8 +9,22 @@
 .formStyle{
   background: #fff;
   padding:0px 50rpx;
-  width: 70%;
+  width: 560rpx;
   border-radius: 10rpx;
+}
+.selectTextColor,.selectBackgroundColor{
+  display: flex;
+}
+.previewImageStyle img{width:70rpx;}
+.picker{
+  font-size:30rpx;
+}
+.colorPicker{
+  font-size: 32rpx;
+}
+.h3Style{
+  font-size: 32rpx;
+  color: #666;
 }
 .searchBox .stext {
   border:1px solid #c00;

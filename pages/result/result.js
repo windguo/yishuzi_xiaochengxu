@@ -23,5 +23,8 @@ Page({
   },
   data:{
     createdImg:''
+  },
+  navigateBack:function(){
+    wx.navigateBack();
   }
 })

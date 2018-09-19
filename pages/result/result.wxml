@@ -1,4 +1,5 @@
 <view wx:if='{{createdImg}}' class="alignCenter">
   <image src='{{createdImg}}' mode='widthFix'></image>
+  <button size='mini' bindtap="navigateBack" type="primary">重新设计</button>
   <button open-type="share" size='mini' type="primary">分享给好友</button>
 </view>
