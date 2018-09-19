@@ -29,7 +29,10 @@ Page({
         height: 150,
         fontColor: this.data.textColorArray[this.data.textColorArrayIndex].color,
         bgColor: this.data.backgroundColorArray[this.data.backgroundColorArrayIndex].backgroundColor,
-        font: e.detail.value['font']
+        font: e.detail.value['font'],
+        fontSize: e.detail.value['fontSize'],
+        width: e.detail.value['width'],
+        height: e.detail.value['height']
       },
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       method:'POST',
@@ -54,7 +57,7 @@ Page({
         });
         console.log(this.data.objectArray[0].id)
         this.setData({
-          previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[0].id + '&text=艺术字生成网&fontSize=20&width=240&height=50',
+          previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[0].id + '&text=艺术字生成网&fontSize=20&width=200&height=50',
           // index: this.data.objectArray[0].id
         });
       }
@@ -64,6 +67,7 @@ Page({
     objectArray: [],
     previewImage:'',
     index: 0,
+    fontSize:30,
     textColorArray:[
       {
         color: '#000000',
@@ -152,7 +156,7 @@ Page({
     console.log('picker发送选择改变，携带值为', e.detail.value);
     console.log('====', this.data.objectArray[e.detail.value].id);
     this.setData({
-      previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[e.detail.value].id + '&text=艺术字生成网&fontSize=20&width=240&height=50',
+      previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[e.detail.value].id + '&text=艺术字生成网&fontSize=20&width=200&height=50',
       index: e.detail.value
     });
   },
@@ -168,4 +172,9 @@ Page({
       backgroundColorArrayIndex: e.detail.value
     })
   },
+  slider4change:function(e){
+    this.setData({
+      fontSize:e.detail.value
+    })
+  }
 })

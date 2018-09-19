@@ -6,7 +6,7 @@ Page({
     }
     return {
       title:'看看我设计的签名帅气不，点击来试试！',
-      // path:'/',
+      path:'/pages/index/index',
       imageUrl:this.data.createdImg,
       success: (res) => {
         console.log("转发成功", res);

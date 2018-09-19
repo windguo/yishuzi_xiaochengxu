@@ -8,8 +8,9 @@
 }
 .formStyle{
   background: #fff;
-  padding:0px 50rpx;
-  width: 560rpx;
+  opacity: 0.9;
+  padding:0px 40rpx;
+  width: 540rpx;
   border-radius: 10rpx;
 }
 .selectTextColor,.selectBackgroundColor{
@@ -17,7 +18,7 @@
 }
 .previewImageStyle img{width:70rpx;}
 .picker{
-  font-size:30rpx;
+  font-size:40rpx;
 }
 .colorPicker{
   font-size: 32rpx;
@@ -27,10 +28,10 @@
   color: #666;
 }
 .searchBox .stext {
-  border:1px solid #c00;
-  background:#fff;
+  border:1px solid #f60;
+  background:#f8f8f8;
   border-radius: 20rpx;
-  padding:18rpx;
+  padding:24rpx;
   margin-bottom:10rpx;
 }
 .alignCenter{
