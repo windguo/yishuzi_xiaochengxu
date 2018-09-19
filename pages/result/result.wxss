@@ -6,9 +6,6 @@
 .buttonWrap{
   padding-top:30rpx;
 }
-.searchBox .selects{
-  /* display: none; */
-}
 .searchBox .stext {
   border:1px solid #c00;
   background:#fff;
@@ -18,7 +15,7 @@
 }
 .alignCenter{
   text-align: center;
-  padding:30rpx 0 100rpx 0;
+  padding:0rpx 0 100rpx 0;
 }
 .alignCenter img{border-radius: 10rpx;}
 .searchBox .sname{padding:20rpx 0;}

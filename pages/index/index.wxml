@@ -2,19 +2,24 @@
 <view class="container">
   <form class="formStyle" bindsubmit="formSubmit">
     <view class="searchBox">
+      <view class="sname">
+        <input name="text" focus="true" class="stext" maxlength="20" value="" placeholder="请输入您的姓名" />
+      </view>
       <view class="selects">
-        <span class="h3Style">选择字体:</span>
-        <picker bindchange="bindPickerChange" value="{{objectArray[index].id}}" name="font" range-key="title" range="{{objectArray}}">
-          <view class="picker">
-            {{objectArray[index].title}}
+        <span class="h3Style">选择字体：</span>
+        <view>
+          <picker bindchange="bindPickerChange" value="{{objectArray[index].id}}" name="font" range-key="title" range="{{objectArray}}">
+            <view class="picker">
+              {{objectArray[index].title}} ▽
+            </view>
+          </picker>
+          <view wx:if='{{previewImage}}' class="previewImageStyle">
+            <image src='{{previewImage}}' style="width: 190px; height: 70px;" mode='center'></image>
           </view>
-        </picker>
-        <view wx:if='{{previewImage}}' class="previewImageStyle">
-          <image src='{{previewImage}}' style="width:560rpx;" mode='widthFix'></image>
         </view>
       </view>
       <view class="selectTextColor">
-        <span class="h3Style">选择文字颜色：</span>
+        <span class="h3Style">文字颜色：</span>
         <picker bindchange="bindPickerTextColorChange" value="{{textColorArrayIndex}}" name="fontColor" range-key="name"
           range="{{textColorArray}}">
           <view class="colorPicker" style="color:{{textColorArray[textColorArrayIndex].color}};padding:0 20rpx;">
@@ -23,7 +28,7 @@
         </picker>
       </view>
       <view class="selectBackgroundColor">
-        <span class="h3Style">选择背景颜色：</span>
+        <span class="h3Style">背景颜色：</span>
         <picker bindchange="bindPickerBackgroundColorChange" value="{{backgroundColorArrayIndex}}" name="bgColor" range-key="name"
           range="{{backgroundColorArray}}">
           <view class="colorPicker" style="background:{{backgroundColorArray[backgroundColorArrayIndex].backgroundColor}};border-radius:10rpx;padding:0 20rpx;color:{{backgroundColorArray[backgroundColorArrayIndex].color}}">
@@ -31,25 +36,22 @@
           </view>
         </picker>
       </view>
-      <view class="section section_gap">
-        <span class="h3Style">选择签名字号：</span>
-        <slider name="fontSize" bindchange="slider4change" min="30" max="100" show-value />
+      <view class="sectionSlide">
+        <span class="h3Style">文字字号：</span>
+        <slider class="sectionSlides" name="fontSize" block-size="20" block-color="#f60" value="30" bindchange="slider4change" min="20" max="100" show-value />
       </view>
-      <view class="section section_gap">
-        <span class="h3Style">选择宽度：</span>
-        <slider name="width" value="300" bindchange="slider4change" min="30" max="500" show-value />
+      <view class="sectionSlide">
+        <span class="h3Style">宽度：</span>
+        <slider class="sectionSlides" name="width" block-size="20" block-color="#f60" value="300" bindchange="slider4change" min="30" max="500" show-value />
       </view>
-      <view class="section section_gap">
-        <span class="h3Style">选择高度：</span>
-        <slider name="height" value="150" bindchange="slider4change" min="30" max="300" show-value />
-      </view>
-      <view class="sname">
-        <input name="text" class="stext" maxlength="20" value="" placeholder="请输入您的姓名" />
+      <view class="sectionSlide">
+        <span class="h3Style">高度：</span>
+        <slider class="sectionSlides" name="height" block-size="20" block-color="#f60" value="150" bindchange="slider4change" min="30" max="500" show-value />
       </view>
     </view>
     
     <view class="buttonWrap">
-      <button class="sbutton" formType="submit" type="warn"> 立即设计生成艺术字 </button>
+      <button class="sbutton" formType="submit"> 立即设计生成艺术字 </button>
     </view>
   </form>
   <view wx:if='{{createdImg}}' class="alignCenter">

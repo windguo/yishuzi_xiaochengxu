@@ -57,7 +57,7 @@ Page({
         });
         console.log(this.data.objectArray[0].id)
         this.setData({
-          previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[0].id + '&text=艺术字生成网&fontSize=20&width=200&height=50',
+          previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[0].id + '&text=张曼玉ABCabc123示例图片&fontSize=20&width=190&height=70',
           // index: this.data.objectArray[0].id
         });
       }
@@ -102,8 +102,8 @@ Page({
         name: '紫色 #800080'
       },
       {
-        color: '#000000',
-        name: '黑色 #000000'
+        color: '#ffffff',
+        name: '白色 #ffffff'
       }
     ],
     textColorArrayIndex:0,
@@ -147,6 +147,11 @@ Page({
         backgroundColor: '#800080',
         name: '紫色 #800080',
         color: '#ffffff'
+      },
+      {
+        backgroundColor: '#000000',
+        name: '黑色 #000000',
+        color: '#ffffff'
       }
     ],
     backgroundColorArrayIndex: 0,
@@ -156,7 +161,7 @@ Page({
     console.log('picker发送选择改变，携带值为', e.detail.value);
     console.log('====', this.data.objectArray[e.detail.value].id);
     this.setData({
-      previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[e.detail.value].id + '&text=艺术字生成网&fontSize=20&width=200&height=50',
+      previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[e.detail.value].id + '&text=张曼玉ABCabc123示例图片&fontSize=20&width=190&height=70',
       index: e.detail.value
     });
   },

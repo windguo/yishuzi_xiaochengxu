@@ -1,10 +1,17 @@
 .searchBox{
   line-height: 80rpx;
-  margin-top:30rpx;
   padding:0 10rpx;
 }
+.selects{display: flex;}
 .buttonWrap{
   padding:30rpx 0 50rpx 0;
+}
+.sectionSlide{
+  display: flex;
+}
+.sectionSlides{
+  width: 450rpx;
+  margin:0rpx 0rpx 0rpx 20rpx;
 }
 .formStyle{
   background: #fff;
@@ -16,29 +23,32 @@
 .selectTextColor,.selectBackgroundColor{
   display: flex;
 }
-.previewImageStyle img{width:70rpx;}
 .picker{
-  font-size:40rpx;
+  font-size:30rpx;
 }
 .colorPicker{
   font-size: 32rpx;
 }
 .h3Style{
   font-size: 32rpx;
+  text-align: right;
+  color:#999;
+  width: 160rpx;
   color: #666;
 }
 .searchBox .stext {
-  border:1px solid #f60;
+  border:1px solid rgba(189, 80, 7, 0.651);
   background:#f8f8f8;
   border-radius: 20rpx;
-  padding:24rpx;
+  padding:20rpx 24rpx;
   margin-bottom:10rpx;
 }
-.alignCenter{
-  text-align: center;
-  padding:30rpx 0 100rpx 0;
+.sbutton{
+  background:#ff5a00;
+  color: #fff;
+  font-size:36rpx;
+  font-weight: 300
 }
-.alignCenter img{border-radius: 10rpx;}
 .searchBox .sname{padding:20rpx 0;}
 .searchBox .sbutton{
   margin-top: 20rpx;
