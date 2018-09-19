@@ -1,0 +1,4 @@
+<view wx:if='{{createdImg}}' class="alignCenter">
+  <image src='{{createdImg}}' mode='widthFix'></image>
+  <button open-type="share" size='mini' type="primary">分享给好友</button>
+</view>

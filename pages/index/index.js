@@ -7,7 +7,13 @@ Page({
     return {
       title:'看看我设计的签名帅气不，点击来试试！',
       // path:'/',
-      imageUrl:this.data.createdImg
+      imageUrl:this.data.createdImg,
+      success: (res) => {
+        console.log("转发成功", res);
+      },
+      fail: (res) => {
+        console.log("转发失败", res);
+      }
     }
   },
   formSubmit: function (e) {
@@ -17,8 +23,8 @@ Page({
       data:{
         text: e.detail.value.text,
         fontSize: 50,
-        width: 280,
-        height: 100,
+        width: 300,
+        height: 150,
         font:this.data.index
       },
       header: { 'content-type': 'application/x-www-form-urlencoded' },
@@ -26,14 +32,16 @@ Page({
       dataType:'json',
       success:(json) => {
         console.log(json);
-        this.setData({
-          createdImg: 'http://www.yishuzi.com.cn' + json.data.result.path
+        wx.navigateTo({
+          url: '../result/result?createdImg=' + json.data.result.path
         })
+        // this.setData({
+        //   createdImg: json.data.result.path
+        // })
       }
     })
   },
   onLoad:function(){
-
     wx.request({
       url: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=list',
       method: 'GET',

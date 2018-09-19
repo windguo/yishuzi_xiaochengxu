@@ -4,13 +4,10 @@
   padding:0 10rpx;
 }
 .buttonWrap{
-  padding:30rpx 0 50rpx 0;
+  padding-top:30rpx;
 }
-.formStyle{
-  background: #fff;
-  padding:0px 50rpx;
-  width: 70%;
-  border-radius: 10rpx;
+.searchBox .selects{
+  /* display: none; */
 }
 .searchBox .stext {
   border:1px solid #c00;
