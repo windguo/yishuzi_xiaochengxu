@@ -42,11 +42,11 @@
       </view>
       <view class="sectionSlide">
         <span class="h3Style">宽度：</span>
-        <slider class="sectionSlides" name="width" block-size="20" block-color="#f60" value="300" bindchange="slider4change" min="30" max="500" show-value />
+        <slider class="sectionSlides" name="width" block-size="20" block-color="#f60" value="300" bindchange="slider4change" min="30" max="400" show-value />
       </view>
       <view class="sectionSlide">
         <span class="h3Style">高度：</span>
-        <slider class="sectionSlides" name="height" block-size="20" block-color="#f60" value="150" bindchange="slider4change" min="30" max="500" show-value />
+        <slider class="sectionSlides" name="height" block-size="20" block-color="#f60" value="100" bindchange="slider4change" min="30" max="200" show-value />
       </view>
     </view>
     
@@ -54,8 +54,5 @@
       <button class="sbutton" formType="submit"> 立即设计生成艺术字 </button>
     </view>
   </form>
-  <view wx:if='{{createdImg}}' class="alignCenter">
-    <image src='{{createdImg}}' mode='widthFix'></image>
-    <button open-type="share" size='mini' type="primary">分享给好友</button>
-  </view>
+  <text style="font-size:32rpx;">客服QQ或微信:275333(备注:小程序)</text>
 </view>

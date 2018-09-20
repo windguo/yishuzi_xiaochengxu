@@ -16,15 +16,11 @@
 .alignCenter{
   text-align: center;
 }
-.alignCenter button{
-  font-weight:300
-}
 .searchBox .sname{padding:20rpx 0;}
 .searchBox .sbutton{
   margin-top: 20rpx;
 }
 .sharsStyle{
   margin:20rpx auto;
-  text-align: center;
   height:700rpx;
 }
