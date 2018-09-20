@@ -5,16 +5,18 @@ Page({
       console.log(res.target)
     }
     return {
-      title:'看看我设计的签名帅气不，点击来试试！',
+      title:'新发现的艺术字生成和签名设计的小程序,赶紧来看看',
       // path:'/',
       imageUrl:this.data.createdImg,
       success: (res) => {
-        wx.showToast("转发成功");
-        // console.log("转发成功", res);
+        wx.showToast({
+          content:'分享成功'
+        });
       },
       fail: (res) => {
-        wx.showToast("转发成功", res);
-        // console.log("转发失败", res);
+        wx.showToast({
+          content: '分享失败,原因是' + res
+        });
       }
     }
   },
@@ -80,6 +82,10 @@ Page({
     index: 0,
     fontSize:30,
     textColorArray:[
+      {
+        color: '#FF8C00',
+        name: '深橙色',
+      },
       {
         color: '#FFB6C1',
         name: '浅粉红',
@@ -493,10 +499,6 @@ Page({
         name: '(浓汤)乳脂,番茄等',
       },
       {
-        color: '#FF8C00',
-        name: '深橙色',
-      },
-      {
         color: '#FAF0E6',
         name: '亚麻布',
       },
@@ -631,6 +633,10 @@ Page({
     ],
     textColorArrayIndex:0,
     backgroundColorArray: [
+      {
+        backgroundColor: '#ffffff',
+        name: '白色'
+      },
       {
         backgroundColor: '#F0FFFF',
         name: '蔚蓝色',
@@ -1174,10 +1180,6 @@ Page({
       {
         backgroundColor: '#5F9EA0',
         name: '军校蓝',
-      },
-      {
-        backgroundColor: '#ffffff',
-        name: '白色 #ffffff'
       }
     ],
     backgroundColorArrayIndex: 0,

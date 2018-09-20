@@ -9,10 +9,14 @@ Page({
       path:'/pages/index/index',
       imageUrl:this.data.createdImg,
       success: (res) => {
-        console.log("转发成功", res);
+        wx.showToast({
+          title: '转发成功'
+        })
       },
       fail: (res) => {
-        console.log("转发失败", res);
+        wx.showToast({
+          title: '转发失败，原因是' + res
+        })
       }
     }
   },
@@ -69,8 +73,8 @@ Page({
       success: (res) => {
         if (res.errMsg == "saveImageToPhotosAlbum:ok"){
           wx.showModal({
-            title: '提示',
-            content: '保存成功'
+            content: '保存成功',
+            showCancel: false
           })
         }
       },
