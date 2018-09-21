@@ -21,7 +21,7 @@ Page({
     }
   },
   formSubmit: function (e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value);
+    console.log('form发生了submit事件，携带数据为：', e);
     if (e.detail.value.text == ''){
       wx.showModal({
         content: '请输入您的姓名',
@@ -30,7 +30,7 @@ Page({
       })
       setTimeout(function () {
         wx.hideToast()
-      }, 2000)
+      }, 2000);
       return false;
     };
     wx.request({
@@ -58,22 +58,80 @@ Page({
       }
     })
   },
+  bindReplaceInput: function (e) {
+    console.log('eeeeee---',e);
+    var value = e.detail.value
+    var pos = e.detail.cursor
+    if (pos != -1) {
+      // 光标在中间
+      var left = e.detail.value.slice(0, pos)
+      // 计算光标的位置
+      pos = left.replace(/11/g, '2').length
+    }
+  },
   onLoad:function(){
+    var that = this;
+    //  高度自适应
+    wx.getSystemInfo({
+      success: function (res) {
+        var clientHeight = res.windowHeight,
+          clientWidth = res.windowWidth,
+          rpxR = 750 / clientWidth;
+        var calc = clientHeight * rpxR - 100;
+        console.log('calc',calc)
+        that.setData({
+          winHeight: calc
+        });
+      }
+    });
     wx.request({
-      url: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=list',
+      url: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=list&classid=' + this.data.currentTab,
       method: 'GET',
       dataType: 'json',
       success: (json) => {
         console.log(json.data.result);
         this.setData({
-          objectArray:json.data.result
+          objectArray: json.data.result
         });
-        console.log(this.data.objectArray[0].id)
         this.setData({
-          previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[0].id + '&text=张曼玉ABCabc123示例图片&fontSize=20&width=190&height=70',
+          previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[0].id + '&text=刘德华ABCabc123&fontSize=20&width=190&height=70',
           // index: this.data.objectArray[0].id
         });
       }
+    })
+  },
+  stopSwiper:function(){},
+  // 点击标题切换当前页时改变样式
+  swichNav: function (e) {
+    console.log('e.currentTarget.offsetLeft', e.currentTarget.offsetLeft);
+    console.log('this.data.currentTab', this.data.currentTab);
+    // console.log('1111==width=', )
+    wx.showLoading({});
+    var cur = e.target.dataset.current;
+    if (this.data.currentTaB == cur) { return false; }
+    else {
+      this.setData({
+        currentTab: cur,
+        itemWidth: e.currentTarget.offsetLeft / this.data.currentTab
+      })
+    };
+    wx.request({
+      url: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=list&classid=' + cur,
+      method: 'GET',
+      dataType: 'json',
+      success: (json) => {
+        console.log(json.data.result);
+        this.setData({
+          objectArray: json.data.result
+        });
+        this.setData({
+          previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[0].id + '&text=刘德华ABCabc123&fontSize=20&width=190&height=70'
+        });
+        wx.hideLoading();
+      }
+    });
+    this.setData({
+      scrollLeft: e.currentTarget.offsetLeft
     })
   },
   data:{
@@ -81,6 +139,11 @@ Page({
     previewImage:'',
     index: 0,
     fontSize:30,
+    itemWidth:66,
+    winHeight: "",//窗口高度
+    voteTitle:null,
+    currentTab: 1, //预设当前项的值
+    scrollLeft: 0, //tab标题的滚动条位置
     textColorArray:[
       {
         color: '#FF8C00',
@@ -1189,7 +1252,7 @@ Page({
     console.log('picker发送选择改变，携带值为', e.detail.value);
     console.log('====', this.data.objectArray[e.detail.value].id);
     this.setData({
-      previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[e.detail.value].id + '&text=张曼玉ABCabc123示例图片&fontSize=20&width=190&height=70',
+      previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[e.detail.value].id + '&text=刘德华ABCabc123&fontSize=20&width=190&height=70',
       index: e.detail.value
     });
   },

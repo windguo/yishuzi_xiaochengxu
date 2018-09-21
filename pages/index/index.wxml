@@ -1,58 +1,83 @@
-<!--index.wxml-->
-<view class="container">
-  <form class="formStyle" bindsubmit="formSubmit">
-    <view class="searchBox">
-      <view class="sname">
-        <input name="text" focus="true" class="stext" maxlength="20" value="" placeholder="请输入您的姓名" />
-      </view>
-      <view class="selects">
-        <span class="h3Style">选择字体：</span>
-        <view>
-          <picker bindchange="bindPickerChange" value="{{objectArray[index].id}}" name="font" range-key="title" range="{{objectArray}}">
-            <view class="picker">
-              {{objectArray[index].title}} ▽
+<view>
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}" scroll-with-animation="true">
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">书法字</view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">艺术字</view>
+    <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">POP字</view>
+    <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">花体字</view>
+    <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="swichNav">钢笔字</view>
+    <view class="tab-item {{currentTab==6?'active':''}}" data-current="6" bindtap="swichNav">毛笔字</view>
+    <view class="tab-item {{currentTab==7?'active':''}}" data-current="7" bindtap="swichNav">篆书</view>
+    <view class="tab-item {{currentTab==8?'active':''}}" data-current="8" bindtap="swichNav">隶书</view>
+    <view class="tab-item {{currentTab==9?'active':''}}" data-current="9" bindtap="swichNav">楷书</view>
+    <view class="tab-item {{currentTab==10?'active':''}}" data-current="10" bindtap="swichNav">行书</view>
+    <view class="tab-item {{currentTab==11?'active':''}}" data-current="11" bindtap="swichNav">草书</view>
+    <view class="tab-item {{currentTab==12?'active':''}}" data-current="12" bindtap="swichNav">签名</view>
+    <view class="tab-item {{currentTab==13?'active':''}}" data-current="13" bindtap="swichNav">英文</view>
+  </scroll-view>
+  <swiper class="tab-content" current="{{currentTab}}" style="height:{{winHeight}}rpx">
+    <swiper-item wx:for="{{[0,1,2,3,4,5,6,7,8,9,10,11,12,13]}}" wx:for-index='key' wx:for-item='item' catchtouchmove="stopSwiper">
+      <scroll-view scroll-y="true" class="scoll-h">
+        <view class="container">
+          <form class="formStyle" bindsubmit="formSubmit">
+            <view class="searchBox">
+              <view class="sname">
+                <input name="text" class="stext" maxlength="20" placeholder="请输入您的姓名" />
+              </view>
+              <view class="selects">
+                <span class="h3Style">选择字体：</span>
+                <view>
+                  <picker bindchange="bindPickerChange" value="{{objectArray[index].id}}" name="font" range-key="title" range="{{objectArray}}">
+                    <view class="picker">
+                      {{objectArray[index].title}}
+                    </view>
+                    <view wx:if='{{previewImage}}' class="previewImageStyle">
+                      <image src='{{previewImage}}' style="width: 190px; height: 70px;" mode='center'></image>
+                    </view>
+                  </picker>
+                </view>
+              </view>
+              <view class="selectTextColor">
+                <span class="h3Style">文字颜色：</span>
+                <picker bindchange="bindPickerTextColorChange" value="{{textColorArrayIndex}}" name="fontColor" range-key="name"
+                  range="{{textColorArray}}">
+                  <view class="colorPicker" style="color:{{textColorArray[textColorArrayIndex].color}};padding:0 20rpx;">
+                    {{textColorArray[textColorArrayIndex].name}}
+                  </view>
+                </picker>
+              </view>
+              <view class="selectBackgroundColor">
+                <span class="h3Style">背景颜色：</span>
+                <picker bindchange="bindPickerBackgroundColorChange" value="{{backgroundColorArrayIndex}}" name="bgColor"
+                  range-key="name" range="{{backgroundColorArray}}">
+                  <view class="colorPicker" style="background:{{backgroundColorArray[backgroundColorArrayIndex].backgroundColor}};border-radius:10rpx;padding:0 20rpx;color:{{backgroundColorArray[backgroundColorArrayIndex].color}}">
+                    {{backgroundColorArray[backgroundColorArrayIndex].name}}
+                  </view>
+                </picker>
+              </view>
+              <view class="sectionSlide">
+                <span class="h3Style">文字字号：</span>
+                <slider class="sectionSlides" name="fontSize" block-size="20" block-color="#f60" value="30" bindchange="slider4change"
+                  min="20" max="100" show-value />
+              </view>
+              <view class="sectionSlide">
+                <span class="h3Style">宽度：</span>
+                <slider class="sectionSlides" name="width" block-size="20" block-color="#f60" value="300" bindchange="slider4change"
+                  min="30" max="400" show-value />
+              </view>
+              <view class="sectionSlide">
+                <span class="h3Style">高度：</span>
+                <slider class="sectionSlides" name="height" block-size="20" block-color="#f60" value="100" bindchange="slider4change"
+                  min="30" max="200" show-value />
+              </view>
             </view>
-          </picker>
-          <view wx:if='{{previewImage}}' class="previewImageStyle">
-            <image src='{{previewImage}}' style="width: 190px; height: 70px;" mode='center'></image>
-          </view>
+        
+            <view class="buttonWrap">
+              <button class="sbutton" formType="submit"> 立即设计生成艺术字 </button>
+            </view>
+          </form>
+          <text style="font-size:32rpx;">客服QQ或微信:275333(备注:小程序)</text>
         </view>
-      </view>
-      <view class="selectTextColor">
-        <span class="h3Style">文字颜色：</span>
-        <picker bindchange="bindPickerTextColorChange" value="{{textColorArrayIndex}}" name="fontColor" range-key="name"
-          range="{{textColorArray}}">
-          <view class="colorPicker" style="color:{{textColorArray[textColorArrayIndex].color}};padding:0 20rpx;">
-            {{textColorArray[textColorArrayIndex].name}}
-          </view>
-        </picker>
-      </view>
-      <view class="selectBackgroundColor">
-        <span class="h3Style">背景颜色：</span>
-        <picker bindchange="bindPickerBackgroundColorChange" value="{{backgroundColorArrayIndex}}" name="bgColor" range-key="name"
-          range="{{backgroundColorArray}}">
-          <view class="colorPicker" style="background:{{backgroundColorArray[backgroundColorArrayIndex].backgroundColor}};border-radius:10rpx;padding:0 20rpx;color:{{backgroundColorArray[backgroundColorArrayIndex].color}}">
-            {{backgroundColorArray[backgroundColorArrayIndex].name}}
-          </view>
-        </picker>
-      </view>
-      <view class="sectionSlide">
-        <span class="h3Style">文字字号：</span>
-        <slider class="sectionSlides" name="fontSize" block-size="20" block-color="#f60" value="30" bindchange="slider4change" min="20" max="100" show-value />
-      </view>
-      <view class="sectionSlide">
-        <span class="h3Style">宽度：</span>
-        <slider class="sectionSlides" name="width" block-size="20" block-color="#f60" value="300" bindchange="slider4change" min="30" max="400" show-value />
-      </view>
-      <view class="sectionSlide">
-        <span class="h3Style">高度：</span>
-        <slider class="sectionSlides" name="height" block-size="20" block-color="#f60" value="100" bindchange="slider4change" min="30" max="200" show-value />
-      </view>
-    </view>
-    
-    <view class="buttonWrap">
-      <button class="sbutton" formType="submit"> 立即设计生成艺术字 </button>
-    </view>
-  </form>
-  <text style="font-size:32rpx;">客服QQ或微信:275333(备注:小程序)</text>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
 </view>
