@@ -44,6 +44,7 @@ Page({
         bgColor: this.data.backgroundColorArray[this.data.backgroundColorArrayIndex].backgroundColor,
         font: e.detail.value['font'],
         fontSize: e.detail.value['fontSize'],
+        yishuziFrom: e.detail.value['yishuziFrom'],
         width: e.detail.value['width'],
         height: e.detail.value['height']
       },
