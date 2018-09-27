@@ -6,8 +6,8 @@ Page({
     }
     return {
       title:'新发现的艺术字生成和签名设计的小程序,赶紧来看看',
-      // path:'/',
-      imageUrl:this.data.createdImg,
+      path:'/',
+      imageUrl: '../../indexPic.png',
       success: (res) => {
         wx.showToast({
           content:'分享成功'
