@@ -1,4 +1,5 @@
 .container{
   padding:0 60rpx;
+  background: #ffffff;
   font-weight:300
 }

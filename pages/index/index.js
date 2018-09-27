@@ -85,39 +85,44 @@ Page({
         });
       }
     });
+    let _classid = [];
+    let _expertListi = [];
     wx.request({
-      url: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=list&classid=' + this.data.currentTab,
+      url: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=class',
       method: 'GET',
       dataType: 'json',
       success: (json) => {
-        console.log(json.data.result);
-        this.setData({
-          objectArray: json.data.result
-        });
-        this.setData({
-          previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[0].id + '&text=刘德华ABCabc123&fontSize=20&width=190&height=70',
-          // index: this.data.objectArray[0].id
+        console.log('class---',json.data.result);
+        for (var i = 0; i < json.data.result.length; i++) {
+          _expertListi.push(i)
+          _classid.push(json.data.result[i].classid);
+        };
+        that.setData({
+          expertList: json.data.result,
+          expertListi: _expertListi,
+          expertListId: _classid
         });
       }
-    })
+    });
+    this.getListData(1,'艺术字生成');
   },
-  stopSwiper:function(){},
   // 点击标题切换当前页时改变样式
   swichNav: function (e) {
     console.log('e.currentTarget.offsetLeft', e.currentTarget.offsetLeft);
     console.log('this.data.currentTab', this.data.currentTab);
     // console.log('1111==width=', )
-    wx.showLoading({});
+    // wx.showLoading({});
     var cur = e.target.dataset.current;
     if (this.data.currentTaB == cur) { return false; }
     else {
       this.setData({
-        currentTab: cur,
-        itemWidth: e.currentTarget.offsetLeft / this.data.currentTab
+        currentTab: cur
       })
     };
+  },
+  getListData: function (classid, _text) {
     wx.request({
-      url: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=list&classid=' + cur,
+      url: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=list&classid=' + classid,
       method: 'GET',
       dataType: 'json',
       success: (json) => {
@@ -126,14 +131,30 @@ Page({
           objectArray: json.data.result
         });
         this.setData({
-          previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[0].id + '&text=刘德华ABCabc123&fontSize=20&width=190&height=70'
+          previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[0].id + '&text=' + _text +'&fontSize=28&width=250&height=60&fontColor=ff5a00'
         });
-        wx.hideLoading();
       }
     });
+  },
+  // 滚动切换标签样式
+  swiperChange: function (e) {
+    console.log('swiperChange==ee.detail.current', e.detail.current);
     this.setData({
-      scrollLeft: e.currentTarget.offsetLeft
-    })
+      currentTab: e.detail.current
+    });
+    let _txt = '';
+    if (e.detail.current == 12){
+      _txt = 'yishuzi';
+    }else{
+      _txt = '艺术字生成';
+    }
+    this.getListData(this.data.expertListId[e.detail.current], _txt);
+    this.checkCor();
+  },
+  checkCor: function () {
+    this.setData({
+      scrollLeft: this.data._windowWidth / 5 * this.data.currentTab - 100
+    });
   },
   data:{
     objectArray: [],
@@ -143,8 +164,12 @@ Page({
     itemWidth:66,
     winHeight: "",//窗口高度
     voteTitle:null,
-    currentTab: 1, //预设当前项的值
+    currentTab: 0, //预设当前项的值
     scrollLeft: 0, //tab标题的滚动条位置
+    expertListi: [],
+    expertList: [],
+    expertListId: [],
+    contentArray:[],
     textColorArray:[
       {
         color: '#FF8C00',
@@ -1247,15 +1272,21 @@ Page({
       }
     ],
     backgroundColorArrayIndex: 0,
+    _windowWidth: wx.getSystemInfoSync().windowWidth,
     createdImg:''
   },
   bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value);
-    console.log('====', this.data.objectArray[e.detail.value].id);
+    let _txt = '';
+    if (this.data.currentTab == 12) {
+      _txt = 'yishuzi';
+    } else {
+      _txt = '艺术字生成';
+    }
     this.setData({
-      previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[e.detail.value].id + '&text=刘德华ABCabc123&fontSize=20&width=190&height=70',
+      previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[e.detail.value].id + '&text=' + _txt +'&fontSize=28&width=250&height=60&fontColor=ff5a00',
       index: e.detail.value
     });
+    console.log('previewImagepreviewImage', this.data.previewImage);
   },
   bindPickerTextColorChange: function (e) {
     console.log('textColorArray=发送选择改变，携带值为', e.detail.value)

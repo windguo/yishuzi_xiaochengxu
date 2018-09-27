@@ -1,40 +1,29 @@
 <view>
-  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}" scroll-with-animation="true">
-    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">书法字</view>
-    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">艺术字</view>
-    <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">POP字</view>
-    <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">花体字</view>
-    <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="swichNav">钢笔字</view>
-    <view class="tab-item {{currentTab==6?'active':''}}" data-current="6" bindtap="swichNav">毛笔字</view>
-    <view class="tab-item {{currentTab==7?'active':''}}" data-current="7" bindtap="swichNav">篆书</view>
-    <view class="tab-item {{currentTab==8?'active':''}}" data-current="8" bindtap="swichNav">隶书</view>
-    <view class="tab-item {{currentTab==9?'active':''}}" data-current="9" bindtap="swichNav">楷书</view>
-    <view class="tab-item {{currentTab==10?'active':''}}" data-current="10" bindtap="swichNav">行书</view>
-    <view class="tab-item {{currentTab==11?'active':''}}" data-current="11" bindtap="swichNav">草书</view>
-    <view class="tab-item {{currentTab==12?'active':''}}" data-current="12" bindtap="swichNav">签名</view>
-    <view class="tab-item {{currentTab==13?'active':''}}" data-current="13" bindtap="swichNav">英文</view>
+  <scroll-view scroll-with-animation="true" scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+    <view wx:for="{{expertList}}" wx:for-index="idx" wx:for-item="item" class="tab-item {{currentTab==idx?'active':''}}"
+      data-current="{{idx}}" bindtap="swichNav">{{item.classname}}</view>
   </scroll-view>
-  <swiper class="tab-content" current="{{currentTab}}" style="height:{{winHeight}}rpx">
-    <swiper-item wx:for="{{[0,1,2,3,4,5,6,7,8,9,10,11,12,13]}}" wx:for-index='key' wx:for-item='item' catchtouchmove="stopSwiper">
+  <swiper class="tab-content" current="{{currentTab}}" style="height:{{winHeight}}rpx" bindchange="swiperChange">
+    <swiper-item wx:for="{{expertListi}}" wx:for-index="i" wx:for-item="items">
       <scroll-view scroll-y="true" class="scoll-h">
         <view class="container">
           <form class="formStyle" bindsubmit="formSubmit">
             <view class="searchBox">
               <view class="sname">
-                <input name="text" class="stext" maxlength="20" placeholder="请输入您的姓名" />
+                <input name="text" class="stext" maxlength="20" placeholder="请输入您的姓名" placeholder-class="place-holder" />
               </view>
               <view class="selects">
-                <span class="h3Style">选择字体：</span>
-                <view>
-                  <picker bindchange="bindPickerChange" value="{{objectArray[index].id}}" name="font" range-key="title" range="{{objectArray}}">
+                <picker bindchange="bindPickerChange" value="{{objectArray[index].id}}" name="font" range-key="title" range="{{objectArray}}">
+                  <view style="display: flex;">
+                    <span class="h3Style">选择字体：</span>
                     <view class="picker">
                       {{objectArray[index].title}}
                     </view>
-                    <view wx:if='{{previewImage}}' class="previewImageStyle">
-                      <image src='{{previewImage}}' style="width: 190px; height: 70px;" mode='center'></image>
-                    </view>
-                  </picker>
-                </view>
+                  </view>
+                  <view wx:if='{{previewImage}}' class="previewImageStyle">
+                    <image src='{{previewImage}}' style="width: 250px; height: 60px;" mode='center'></image>
+                  </view>
+                </picker>
               </view>
               <view class="selectTextColor">
                 <span class="h3Style">文字颜色：</span>
