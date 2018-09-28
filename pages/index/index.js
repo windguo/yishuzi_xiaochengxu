@@ -46,7 +46,8 @@ Page({
         fontSize: e.detail.value['fontSize'],
         yishuziFrom: e.detail.value['yishuziFrom'],
         width: e.detail.value['width'],
-        height: e.detail.value['height']
+        height: e.detail.value['height'],
+        fontId: 50,
       },
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       method:'POST',
@@ -126,7 +127,7 @@ Page({
       method: 'GET',
       dataType: 'json',
       success: (json) => {
-        console.log(json.data.result);
+        console.log('====',json.data.result);
         this.setData({
           objectArray: json.data.result
         });
@@ -160,6 +161,7 @@ Page({
     objectArray: [],
     previewImage:'',
     index: 0,
+    fontId:null,
     fontSize:30,
     itemWidth:66,
     winHeight: "",//窗口高度

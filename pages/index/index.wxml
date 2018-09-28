@@ -60,6 +60,7 @@
               </view>
             </view>
             <input name="yishuziFrom" style="display:none" value="xiaochengxu" />
+            <input name="fontId" style="display:none" value="{{objectArray[index].id}}" />
             <view class="buttonWrap">
               <button class="sbutton" formType="submit"> 立即设计生成艺术字 </button>
             </view>
