@@ -86,6 +86,18 @@ Page({
         });
       }
     });
+
+    wx.request({
+      url: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=countNum',
+      method: 'GET',
+      dataType: 'json',
+      success: (json) => {
+        this.setData({
+          total: json.data.result[0].num
+        })
+      }
+    })
+
     let _classid = [];
     let _expertListi = [];
     wx.request({
@@ -157,9 +169,33 @@ Page({
       scrollLeft: this.data._windowWidth / 5 * this.data.currentTab - 100
     });
   },
+  changeIndicatorDots: function (e) {
+    this.setData({
+      indicatorDots: !this.data.indicatorDots
+    })
+  },
+  changeAutoplay: function (e) {
+    this.setData({
+      autoplay: !this.data.autoplay
+    })
+  },
+  intervalChange: function (e) {
+    this.setData({
+      interval: e.detail.value
+    })
+  },
+  durationChange: function (e) {
+    this.setData({
+      duration: e.detail.value
+    })
+  },
   data:{
+    autoplay: true,
+    interval: 5000,
+    duration: 500,
     objectArray: [],
     previewImage:'',
+    total:200,
     index: 0,
     fontId:null,
     fontSize:30,

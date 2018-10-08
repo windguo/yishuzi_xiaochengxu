@@ -7,8 +7,8 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#ff5a00",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "艺术字生成",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle":"black"
   }
 }

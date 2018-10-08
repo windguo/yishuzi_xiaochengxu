@@ -1,4 +1,13 @@
 <view>
+  <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <swiper-item>
+      <view class="swiper_item" style="background:#FF1493;color:#ffff00;">限时免费生成各类艺术字</view>
+    </swiper-item>
+    <swiper-item>
+      <view class="swiper_item" style="background:#1E90FF;color:#ffff00;">目前共收录了{{total}}个字体</view>
+    </swiper-item>
+  </swiper>
   <scroll-view scroll-with-animation="true" scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
     <view wx:for="{{expertList}}" wx:for-index="idx" wx:for-item="item" class="tab-item {{currentTab==idx?'active':''}}"
       data-current="{{idx}}" bindtap="swichNav">{{item.classname}}</view>
