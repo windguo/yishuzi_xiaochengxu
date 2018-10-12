@@ -8,6 +8,7 @@
       <view class="swiper_item" style="background:#1E90FF;color:#ffff00;">目前共收录了{{total}}个字体</view>
     </swiper-item>
   </swiper>
+  <ad unit-id="adunit-b7c12a23e9c8bfc6"></ad>
   <scroll-view scroll-with-animation="true" scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
     <view wx:for="{{expertList}}" wx:for-index="idx" wx:for-item="item" class="tab-item {{currentTab==idx?'active':''}}"
       data-current="{{idx}}" bindtap="swichNav">{{item.classname}}</view>
@@ -79,4 +80,5 @@
       </scroll-view>
     </swiper-item>
   </swiper>
+  <ad unit-id="adunit-a9dfc88a03acf3dd"></ad>
 </view>
