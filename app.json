@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/result/result",
     "pages/my/my",
+    "pages/wangming/wangming",
     "pages/logs/logs"
   ],
   "window":{
@@ -10,5 +11,17 @@
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "艺术字生成",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "艺术字生成"
+      },
+      {
+        "pagePath": "pages/wangming/wangming",
+        "text": "网名大全"
+      }
+    ]
   }
 }

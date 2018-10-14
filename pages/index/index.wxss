@@ -2,7 +2,7 @@ swiper{height:140rpx;font-weight: 300}
 .swiper_item{text-align:center;font-size:50rpx;line-height:140rpx;height:140rpx;}
 
 .tab-h{
-    height: 100rpx;width: 100%; box-sizing: border-box;overflow: hidden;line-height: 100rpx;background: #eee; font-size: 36rpx;font-weight: 300; white-space: nowrap;z-index: 99999;}
+    height: 100rpx;width: 100%; box-sizing: border-box;overflow: hidden;line-height: 100rpx;background: #efefef; font-size: 36rpx;font-weight: 300; white-space: nowrap;z-index: 99999;}
 .tab-item{display: inline-block;margin:0px 10rpx;padding:0 30rpx;}
 .tab-item.active{position: relative;background: #fff;color: #ff5a00}
 .scoll-h{height: 100%;}
