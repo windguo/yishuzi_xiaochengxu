@@ -75,7 +75,7 @@
               <button class="sbutton" formType="submit"> 立即设计生成艺术字 </button>
             </view>
           </form>
-          <text style="font-size:32rpx;">客服QQ或微信:275333(备注:小程序)</text>
+          <text style="font-size:32rpx;padding-bottom:30rpx;">客服QQ或微信:275333(备注:小程序)</text>
         </view>
       </scroll-view>
     </swiper-item>
