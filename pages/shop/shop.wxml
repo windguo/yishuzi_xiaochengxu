@@ -1,0 +1,37 @@
+<view class="wrap">
+    <view class="topad">
+        <h2>纯手写设计签名限时<span style="color:#ffffff;padding:0 10rpx">15</span>元一个</h2>
+        <h2>添加微信:<span style="color:#ffffff;padding:0 30rpx">275333</span>了解详情</h2>
+    </view>
+    <view class="h2title">新品推荐</view>
+    <view wx:for="{{objectArray}}" wx:for-index="i" wx:for-item="items">
+        <view class="list" wx:if='{{objectArray[i].titlepic}}'>
+            <navigator url="../detail/detail?id={{objectArray[i].id}}" hover-class="navigator-hover">
+                <image src='{{objectArray[i].titlepic}}' mode="widthFix" class="listImg"></image>
+                <ul>
+                    <li>
+                        <h2>{{objectArray[i].title}}</h2>
+                    </li>
+                    <li style="color:#f00;font-weight:bold">
+                        限时促销价：{{objectArray[i].price}} 元
+                    </li>
+                    <li style="color:darksalmon;text-decoration:line-through">
+                        原价：{{objectArray[i].tprice}} 元
+                    </li>
+                    <li>
+                        库存：{{objectArray[i].pmaxnum}} 个
+                    </li>
+                    <li>
+                        销量：{{objectArray[i].psalenum}} 个
+                    </li>
+                </ul>
+            </navigator>
+        </view>
+        <navigator url="../cart/cart?id={{objectArray[i].id}}" hover-class="navigator-hover">
+            <view class="carts">
+                <image src='../../static/images/ic_cart.png' mode="widthFix" class="ico_cart" />
+                <text class="carts_text">添加到购物车</text>
+            </view>
+        </navigator>
+    </view>
+</view>

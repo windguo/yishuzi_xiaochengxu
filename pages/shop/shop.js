@@ -1,23 +1,23 @@
 Page({
     data:{
-        objectArray:[]
+      objectArray:[]
     },
     onLoad:function(){
         wx.showLoading({})
         wx.setNavigationBarTitle({
-            title: '签名设计'
+            title: '签名商城'
         });
         wx.request({
-            url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=designList',
-            method: 'GET',
-            dataType: 'json',
-            success: (json) => {
-                console.log('desiginList',json.data);
-                this.setData({
-                    objectArray: json.data.result
-                });
-                wx.hideLoading();
-            }
+          url: 'https://www.yishuzi.com.cn/e/api/shop/?getJson=list',
+          method: 'GET',
+          dataType: 'json',
+          success: (json) => {
+              console.log('desiginList',json.data);
+              this.setData({
+                  objectArray: json.data.result
+              });
+              wx.hideLoading();
+          }
         })
     },
   onShareAppMessage: function (res) {

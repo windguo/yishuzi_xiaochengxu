@@ -1,11 +1,14 @@
 {
   "pages":[
+    "pages/shop/shop",
     "pages/index/index",
     "pages/result/result",
     "pages/my/my",
     "pages/wangming/wangming",
     "pages/design/design",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/detail/detail",
+    "pages/cart/cart"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -20,6 +23,12 @@
         "iconPath": "static/images/ic_home.png",
         "selectedIconPath": "static/images/ic_home_active.png",
         "text": "艺术字首页"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "iconPath": "static/images/ic_shop.png",
+        "selectedIconPath": "static/images/ic_shop_active.png",
+        "text": "签名商城"
       },
       {
         "pagePath": "pages/design/design",

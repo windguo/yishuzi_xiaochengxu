@@ -34,7 +34,7 @@ Page({
       return false;
     };
     wx.request({
-      url: 'https://jianjiexcx.92kaifa.com/e/api/creat/index.php',
+      url: 'https://www.yishuzi.com.cn/e/api/creat/index.php',
       data:{
         text: e.detail.value.text,
         fontSize: 50,
@@ -88,7 +88,7 @@ Page({
     });
 
     wx.request({
-      url: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=countNum',
+      url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=countNum',
       method: 'GET',
       dataType: 'json',
       success: (json) => {
@@ -101,7 +101,7 @@ Page({
     let _classid = [];
     let _expertListi = [];
     wx.request({
-      url: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=class',
+      url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=class',
       method: 'GET',
       dataType: 'json',
       success: (json) => {
@@ -135,7 +135,7 @@ Page({
   },
   getListData: function (classid, _text) {
     wx.request({
-      url: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=list&classid=' + classid,
+      url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=list&classid=' + classid,
       method: 'GET',
       dataType: 'json',
       success: (json) => {
@@ -144,7 +144,7 @@ Page({
           objectArray: json.data.result
         });
         this.setData({
-          previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[0].id + '&text=' + _text +'&fontSize=28&width=250&height=60&fontColor=ff5a00'
+          previewImage: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[0].id + '&text=' + _text +'&fontSize=28&width=250&height=60&fontColor=ff5a00'
         });
       }
     });
@@ -1321,7 +1321,7 @@ Page({
       _txt = '艺术字生成';
     }
     this.setData({
-      previewImage: 'https://jianjiexcx.92kaifa.com/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[e.detail.value].id + '&text=' + _txt +'&fontSize=28&width=250&height=60&fontColor=ff5a00',
+      previewImage: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[e.detail.value].id + '&text=' + _txt +'&fontSize=28&width=250&height=60&fontColor=ff5a00',
       index: e.detail.value
     });
     console.log('previewImagepreviewImage', this.data.previewImage);
