@@ -8,77 +8,73 @@
       <view class="swiper_item" style="background:#1E90FF;color:#ffff00;">目前共收录了{{total}}个字体</view>
     </swiper-item>
   </swiper>
-  <ad unit-id="adunit-b7c12a23e9c8bfc6"></ad>
+  <ad class="ad1" unit-id="adunit-b7c12a23e9c8bfc6"></ad>
   <scroll-view scroll-with-animation="true" scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
     <view wx:for="{{expertList}}" wx:for-index="idx" wx:for-item="item" class="tab-item {{currentTab==idx?'active':''}}"
       data-current="{{idx}}" bindtap="swichNav">{{item.classname}}</view>
   </scroll-view>
   <swiper class="tab-content" current="{{currentTab}}" style="height:{{winHeight}}rpx" bindchange="swiperChange">
     <swiper-item wx:for="{{expertListi}}" wx:for-index="i" wx:for-item="items">
-      <scroll-view scroll-y="true" class="scoll-h">
-        <view class="container">
-          <form class="formStyle" bindsubmit="formSubmit">
-            <view class="searchBox">
-              <view class="sname">
-                <input name="text" class="stext" maxlength="20" placeholder="请输入您的姓名" placeholder-class="place-holder" />
+      <form class="formStyle" bindsubmit="formSubmit">
+        <view class="searchBox">
+          <view class="sname">
+            <input name="text" class="stext" maxlength="20" placeholder="请输入您的姓名" placeholder-class="place-holder" />
+          </view>
+          <view class="selects">
+            <picker bindchange="bindPickerChange" value="{{objectArray[index].id}}" name="font" range-key="title" range="{{objectArray}}">
+              <view style="display: flex;">
+                <span class="h3Style">选择字体：</span>
+                <view class="picker">
+                  {{objectArray[index].title}}
+                </view>
               </view>
-              <view class="selects">
-                <picker bindchange="bindPickerChange" value="{{objectArray[index].id}}" name="font" range-key="title" range="{{objectArray}}">
-                  <view style="display: flex;">
-                    <span class="h3Style">选择字体：</span>
-                    <view class="picker">
-                      {{objectArray[index].title}}
-                    </view>
-                  </view>
-                  <view wx:if='{{previewImage}}' class="previewImageStyle">
-                    <image src='{{previewImage}}' style="width: 250px; height: 60px;" mode='center'></image>
-                  </view>
-                </picker>
+              <view wx:if='{{previewImage}}' class="previewImageStyle">
+                <image src='{{previewImage}}' style="width: 250px; height: 60px;" mode='center'></image>
               </view>
-              <view class="selectTextColor">
-                <span class="h3Style">文字颜色：</span>
-                <picker bindchange="bindPickerTextColorChange" value="{{textColorArrayIndex}}" name="fontColor" range-key="name"
-                  range="{{textColorArray}}">
-                  <view class="colorPicker" style="color:{{textColorArray[textColorArrayIndex].color}};padding:0 20rpx;">
-                    {{textColorArray[textColorArrayIndex].name}}
-                  </view>
-                </picker>
+            </picker>
+          </view>
+          <view class="selectTextColor">
+            <span class="h3Style">文字颜色：</span>
+            <picker bindchange="bindPickerTextColorChange" value="{{textColorArrayIndex}}" name="fontColor" range-key="name"
+              range="{{textColorArray}}">
+              <view class="colorPicker" style="color:{{textColorArray[textColorArrayIndex].color}};padding:0 20rpx;">
+                {{textColorArray[textColorArrayIndex].name}}
               </view>
-              <view class="selectBackgroundColor">
-                <span class="h3Style">背景颜色：</span>
-                <picker bindchange="bindPickerBackgroundColorChange" value="{{backgroundColorArrayIndex}}" name="bgColor"
-                  range-key="name" range="{{backgroundColorArray}}">
-                  <view class="colorPicker" style="background:{{backgroundColorArray[backgroundColorArrayIndex].backgroundColor}};border-radius:10rpx;padding:0 20rpx;color:{{backgroundColorArray[backgroundColorArrayIndex].color}}">
-                    {{backgroundColorArray[backgroundColorArrayIndex].name}}
-                  </view>
-                </picker>
+            </picker>
+          </view>
+          <view class="selectBackgroundColor">
+            <span class="h3Style">背景颜色：</span>
+            <picker bindchange="bindPickerBackgroundColorChange" value="{{backgroundColorArrayIndex}}" name="bgColor"
+              range-key="name" range="{{backgroundColorArray}}">
+              <view class="colorPicker" style="background:{{backgroundColorArray[backgroundColorArrayIndex].backgroundColor}};border-radius:10rpx;padding:0 20rpx;color:{{backgroundColorArray[backgroundColorArrayIndex].color}}">
+                {{backgroundColorArray[backgroundColorArrayIndex].name}}
               </view>
-              <view class="sectionSlide">
-                <span class="h3Style">文字字号：</span>
-                <slider class="sectionSlides" name="fontSize" block-size="20" block-color="#f60" value="30" bindchange="slider4change"
-                  min="20" max="100" show-value />
-              </view>
-              <view class="sectionSlide">
-                <span class="h3Style">宽度：</span>
-                <slider class="sectionSlides" name="width" block-size="20" block-color="#f60" value="300" bindchange="slider4change"
-                  min="30" max="400" show-value />
-              </view>
-              <view class="sectionSlide">
-                <span class="h3Style">高度：</span>
-                <slider class="sectionSlides" name="height" block-size="20" block-color="#f60" value="100" bindchange="slider4change"
-                  min="30" max="200" show-value />
-              </view>
-            </view>
-            <input name="yishuziFrom" style="display:none" value="xiaochengxu" />
-            <input name="fontId" style="display:none" value="{{objectArray[index].id}}" />
-            <view class="buttonWrap">
-              <button class="sbutton" formType="submit"> 立即设计生成艺术字 </button>
-            </view>
-          </form>
-          <text style="font-size:32rpx;padding-bottom:30rpx;">客服QQ或微信:275333(备注:小程序)</text>
+            </picker>
+          </view>
+          <view class="sectionSlide">
+            <span class="h3Style">文字字号：</span>
+            <slider class="sectionSlides" name="fontSize" block-size="20" block-color="#f60" value="30" bindchange="slider4change"
+              min="20" max="100" show-value />
+          </view>
+          <view class="sectionSlide">
+            <span class="h3Style">宽度：</span>
+            <slider class="sectionSlides" name="width" block-size="20" block-color="#f60" value="300" bindchange="slider4change"
+              min="30" max="400" show-value />
+          </view>
+          <view class="sectionSlide">
+            <span class="h3Style">高度：</span>
+            <slider class="sectionSlides" name="height" block-size="20" block-color="#f60" value="100" bindchange="slider4change"
+              min="30" max="200" show-value />
+          </view>
         </view>
-      </scroll-view>
+        <input name="yishuziFrom" style="display:none" value="xiaochengxu" />
+        <input name="fontId" style="display:none" value="{{objectArray[index].id}}" />
+        <view class="buttonWrap">
+          <button class="sbutton" formType="submit"> 立即设计生成艺术字 </button>
+        </view>
+      </form>
+      <view style="font-size:32rpx;padding-bottom:30rpx;text-align:center;">客服QQ或微信:275333(备注:小程序)</view>
     </swiper-item>
   </swiper>
-  <ad unit-id="adunit-a9dfc88a03acf3dd"></ad>
+  <ad class="ad1" unit-id="adunit-a9dfc88a03acf3dd"></ad>
 </view>

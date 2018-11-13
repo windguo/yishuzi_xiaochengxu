@@ -11,7 +11,8 @@ swiper{height:140rpx;font-weight: 300}
   line-height: 80rpx;
 }
 .buttonWrap{
-  padding:30rpx 0 50rpx 0;
+  padding:30rpx 0 10rpx 0;
+  margin:0 40rpx;
 }
 .sectionSlide{
   display: flex;
@@ -43,6 +44,9 @@ swiper{height:140rpx;font-weight: 300}
   width: 160rpx;
   color: #666;
 }
+.searchBox{
+  margin:0 40rpx;
+}
 .searchBox .stext {
   border:1px solid #e68067;
   background:#fffff0;
@@ -57,7 +61,7 @@ swiper{height:140rpx;font-weight: 300}
 .sbutton{
   background:#ff5a00;
   color: #fff;
-  font-size:36rpx;
+  font-size:40rpx;
   border-radius: 30rpx;
   padding:10rpx 0;
   font-weight: 300
@@ -65,3 +69,8 @@ swiper{height:140rpx;font-weight: 300}
 .searchBox .sbutton{
   margin-top: 20rpx;
 }
+.usertagsView h2{padding:40rpx 0;background:#eee;padding-left:30rpx;display: block}
+.usertagsView .previewImage{width:100%;height:200rpx;}
+.usertagsView .ls{border-bottom:5rpx solid #efefef;}
+.usertagsView h3{text-align: center;padding:0 0 50rpx 0;display: block}
+

@@ -1,6 +1,6 @@
 <view>
   <view>
-    <ad unit-id="adunit-b7c12a23e9c8bfc6"></ad>
+    <ad class="ad1" unit-id="adunit-b7c12a23e9c8bfc6"></ad>
     <scroll-view scroll-with-animation="true" scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
     <view  wx:for="{{expertList}}" wx:for-index="idx" wx:for-item="item" class="tab-item {{currentTab==idx?'active':''}}" data-current="{{idx}}" bindtap="swichNav">{{item.classname}}</view>
   </scroll-view>

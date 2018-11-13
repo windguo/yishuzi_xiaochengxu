@@ -69,6 +69,7 @@ Page({
           });
         };
         console.log('contentArray--==',this.data.contentArray);
+        wx.hideLoading();
       }
     })
   },
@@ -100,6 +101,7 @@ Page({
     });
   },
   onLoad: function () {
+    wx.showLoading({});
     wx.setNavigationBarTitle({
       title: '网名大全'
     })

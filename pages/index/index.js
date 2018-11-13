@@ -72,6 +72,7 @@ Page({
     }
   },
   onLoad:function(){
+    wx.showLoading({});
     var that = this;
     //  高度自适应
     wx.getSystemInfo({
@@ -79,7 +80,7 @@ Page({
         var clientHeight = res.windowHeight,
           clientWidth = res.windowWidth,
           rpxR = 750 / clientWidth;
-        var calc = clientHeight * rpxR - 100;
+        var calc = clientHeight * rpxR+50;
         console.log('calc',calc)
         that.setData({
           winHeight: calc
@@ -146,6 +147,7 @@ Page({
         this.setData({
           previewImage: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[0].id + '&text=' + _text +'&fontSize=28&width=250&height=60&fontColor=ff5a00'
         });
+        wx.hideLoading();
       }
     });
   },
