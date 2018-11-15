@@ -69,8 +69,6 @@ swiper{height:140rpx;font-weight: 300}
 .searchBox .sbutton{
   margin-top: 20rpx;
 }
-.usertagsView h2{padding:40rpx 0;background:#eee;padding-left:30rpx;display: block}
-.usertagsView .previewImage{width:100%;height:200rpx;}
-.usertagsView .ls{border-bottom:5rpx solid #efefef;}
-.usertagsView h3{text-align: center;padding:0 0 50rpx 0;display: block}
-
+.ourWorks h2{padding:40rpx 0;background:#eee;padding-left:30rpx;display: block}
+.ourWorks ul{margin:20rpx 0;}
+.ourWorks li{padding:20rpx 0;display: block;}

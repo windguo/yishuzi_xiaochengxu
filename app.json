@@ -15,6 +15,11 @@
     "navigationBarTitleText": "艺术字生成",
     "navigationBarTextStyle":"black"
   },
+  "navigateToMiniProgramAppIdList": [
+    "wxb2e976cef0f6facb",
+    "wxa12f1b4e608253f8",
+    "wx8041cab51c6ffcff"
+  ],
   "tabBar": {
     "list": [
       {
