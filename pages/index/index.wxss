@@ -72,3 +72,32 @@ swiper{height:140rpx;font-weight: 300}
 .ourWorks h2{padding:40rpx 0;background:#eee;padding-left:30rpx;display: block}
 .ourWorks ul{margin:20rpx 0;}
 .ourWorks li{padding:20rpx 0;display: block;}
+
+.node-list{
+    display: flex;
+    flex-flow: wrap;
+    margin:40rpx 0 0rpx 30rpx;
+}
+.node-item {
+    width: 38%;
+    font-size:40rpx;
+    background: #eee;
+    border-radius: 20rpx;
+    padding:30rpx;
+    color:#333;
+    text-align: center;
+    margin-right: 25rpx;
+    margin-bottom: 20rpx;
+}
+.node-item:nth-child(1){background: Turquoise}
+.node-item:nth-child(2){background: LightBLue}
+.node-item:nth-child(3){background: LightGreen}
+.node-item:nth-child(4){background: LightPink}
+.node-item:nth-child(5){background: SkyBlue}
+.node-item:nth-child(6){background: LightSteelBlue}
+.node-item:nth-child(7){background: LightSalmon}
+.node-item:nth-child(8){background: Violet}
+
+.node-title {
+    padding-left:30px;
+}
