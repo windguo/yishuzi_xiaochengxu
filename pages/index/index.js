@@ -20,6 +20,27 @@ Page({
       }
     }
   },
+  fetchData: function () {
+    var that = this;
+    that.setData({
+      hidden: false
+    })
+    wx.request({
+      url: 'https://www.yishuzi.com.cn/jianjie8_xiaochengxu_api/xiaochengxu/?getJson=class',
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          nodes: res.data.result
+        })
+        setTimeout(function () {
+          that.setData({
+            hidden: true
+          })
+        }, 300);
+        wx.hideLoading();
+      }
+    })
+  },
   formSubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e);
     if (e.detail.value.text == ''){
@@ -119,6 +140,7 @@ Page({
       }
     });
     this.getListData(1,'艺术字生成');
+    this.fetchData();
   },
   // 点击标题切换当前页时改变样式
   swichNav: function (e) {

@@ -99,29 +99,10 @@
   </swiper>
   <ad class="ad1" unit-id="adunit-a9dfc88a03acf3dd"></ad>
   <view class="node-list">
-    <navigator target="miniProgram" class="node-item" open-type="navigate" app-id="wx8041cab51c6ffcff" path="/pages/show/show" extra-data="" version="release">
-      设计欣赏
-    </navigator>
-    <navigator target="miniProgram" class="node-item" open-type="navigate" app-id="wx8041cab51c6ffcff" path="/pages/meiwen/meiwen" extra-data="" version="release">
-      经典美文
-    </navigator>
-    <navigator target="miniProgram" class="node-item" open-type="navigate" app-id="wx8041cab51c6ffcff" path="/pages/说说/说说" extra-data="" version="release">
-      说说大全
-    </navigator>
-    <navigator target="miniProgram" class="node-item" open-type="navigate" app-id="wx8041cab51c6ffcff" path="/pages/meitu/meitu" extra-data="" version="release">
-      图片大全
-    </navigator>
-    <navigator target="miniProgram" class="node-item" open-type="navigate" app-id="wx8041cab51c6ffcff" path="/pages/wangming/wangming" extra-data="" version="release">
-      网名大全
-    </navigator>
-    <navigator target="miniProgram" class="node-item" open-type="navigate" app-id="wx8041cab51c6ffcff" path="/pages/touxiang/touxiang" extra-data="" version="release">
-      头像大全
-    </navigator>
-    <navigator target="miniProgram" class="node-item" open-type="navigate" app-id="wx8041cab51c6ffcff" path="/pages/biaoqing/biaoqing" extra-data="" version="release">
-      斗图表情
-    </navigator>
-    <navigator target="miniProgram" class="node-item" open-type="navigate" app-id="wx8041cab51c6ffcff" path="/pages/qianming/qianming" extra-data="" version="release">
-      个性签名
-    </navigator>
+    <block wx:for="{{nodes}}">
+      <navigator class="node-item" url="../{{item.classpath}}/{{item.classpath}}" hover-class="navigator-hover">
+        {{item.classname}}
+      </navigator>
+    </block>
   </view>
 </view>
