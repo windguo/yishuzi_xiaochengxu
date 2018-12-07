@@ -21,7 +21,7 @@ var realWindowWidth = 0;
 var realWindowHeight = 0;
 wx.getSystemInfo({
   success: function (res) {
-    realWindowWidth = res.windowWidth
+    realWindowWidth = res.windowWidth-40
     realWindowHeight = res.windowHeight
   }
 })
@@ -33,7 +33,7 @@ function wxParse(bindName = 'wxParseData', type='html', data='<div class="color:
   var transData = {};//存放转化后的数据
   if (type == 'html') {
     transData = HtmlToJson.html2json(data, bindName);
-    console.log(JSON.stringify(transData, ' ', ' '));
+    // console.log(JSON.stringify(transData, ' ', ' '));
   } else if (type == 'md' || type == 'markdown') {
     var converter = new showdown.Converter();
     var html = converter.makeHtml(data);

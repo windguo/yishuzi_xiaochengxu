@@ -34,6 +34,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    apiUrl: 'https://www.yishuzi.com.cn/jianjie8_xiaochengxu_api',
   }
 })
