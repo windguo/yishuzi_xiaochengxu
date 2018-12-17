@@ -1,4 +1,7 @@
 <view>
+  <view class="covers" hidden="{{flag}}">
+    <image bindtap="gifHidden" class="addGif" src='../../static/images/add.png' background-size="cover"></image>
+  </view>
   <swiper indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <swiper-item>
@@ -98,11 +101,4 @@
     </swiper-item>
   </swiper>
   <ad class="ad1" unit-id="adunit-a9dfc88a03acf3dd"></ad>
-  <view class="node-list">
-    <block wx:for="{{nodes}}">
-      <navigator target="miniProgram" class="node-item" open-type="navigate" app-id="wx8041cab51c6ffcff" path="/pages/{{item.classpath}}/{{item.classpath}}" extra-data="" version="release">
-        {{item.classname}}
-      </navigator>
-    </block>
-  </view>
 </view>
