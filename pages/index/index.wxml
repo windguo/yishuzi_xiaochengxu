@@ -1,6 +1,6 @@
 <view>
-  <view class="covers" hidden="{{flag}}">
-    <image bindtap="gifHidden" class="addGif" src='../../static/images/add.png' background-size="cover"></image>
+  <view bindtap="gifHidden" class="covers" hidden="{{hiddenss}}">
+    <image class="addGif" src='../../static/images/add.png' background-size="cover"></image>
   </view>
   <swiper indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">

@@ -235,6 +235,11 @@ Page({
       interval: e.detail.value
     })
   },
+  gifHidden: function () {
+    this.setData({
+      hiddenss: true
+    })
+  },
   durationChange: function (e) {
     this.setData({
       duration: e.detail.value
@@ -249,6 +254,7 @@ Page({
     total:200,
     index: 0,
     fontId:null,
+    hiddenss:false,
     fontSize:30,
     itemWidth:66,
     winHeight: "",//窗口高度
