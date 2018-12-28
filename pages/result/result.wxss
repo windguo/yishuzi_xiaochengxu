@@ -1,3 +1,6 @@
+Page{
+  background: #eee;
+}
 .searchBox{
   line-height: 80rpx;
   margin-top:30rpx;
@@ -26,5 +29,16 @@
 .sharsStyle{
   margin:20rpx auto;
   text-align: center;
-  height:700rpx;
+  width:300px;
+  height:225px;
+}
+.btns{
+  margin:30rpx 0;
+}
+.tips{
+  background: #fffff0;
+  padding:50rpx;
+  margin-bottom:30rpx;
+  font-size: 40rpx;
+  color: brown;
 }

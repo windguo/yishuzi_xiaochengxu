@@ -40,9 +40,9 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "段子首页",
-					"pathName": "pages/duanzi/duanzi",
-					"query": ""
+					"name": "result",
+					"pathName": "pages/result/result",
+					"query": "createdImg=https://www.yishuzi.com.cn/cache/xiaochengxu-20181228-15459680278951.png&width=400&height=200"
 				}
 			]
 		}

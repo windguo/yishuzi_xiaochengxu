@@ -8,41 +8,34 @@
       <view class="swiper_item" style="background:#FF1493;color:#ffff00;">限时免费生成各类艺术字</view>
     </swiper-item>
     <swiper-item>
-      <view class="swiper_item" style="background:#1E90FF;color:#ffff00;">目前共收录了{{total}}个字体</view>
+      <view class="swiper_item" style="background:#1E90FF;color:#ffff00;">艺术字生成收录了{{total}}个字体</view>
     </swiper-item>
     <swiper-item>
       <view class="swiper_item" style="background:#FF00FF;color:#ffff00;font-size:40rpx;">
         <navigator target="miniProgram" open-type="navigate" app-id="wxb2e976cef0f6facb" path="" extra-data="" version="release">
-          头像图片精选(各类头像和图片集散地)
-        </navigator>
-      </view>
-    </swiper-item>
-    <swiper-item>
-      <view class="swiper_item" style="background:#4B0082;color:#ffff00;font-size:40rpx;">
-        <navigator target="miniProgram" open-type="navigate" app-id="wx8041cab51c6ffcff" path="" extra-data="" version="release">
-          说说、头像、表情、网名、签名大全
+          找头像来 爱头像 ,可以浏览和设计头像哦
         </navigator>
       </view>
     </swiper-item>
     <swiper-item>
       <view class="swiper_item" style="background:#6495ED;color:#ffff00;font-size:50rpx;">
         <navigator target="miniProgram" open-type="navigate" app-id="wxa12f1b4e608253f8" path="" extra-data="" version="release">
-          海量个性网名
+          找网名来 爱网名 ，总有一款适合你
         </navigator>
       </view>
     </swiper-item>
   </swiper>
-  <ad class="ad1" unit-id="adunit-b7c12a23e9c8bfc6"></ad>
   <scroll-view scroll-with-animation="true" scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
     <view wx:for="{{expertList}}" wx:for-index="idx" wx:for-item="item" class="tab-item {{currentTab==idx?'active':''}}"
       data-current="{{idx}}" bindtap="swichNav">{{item.classname}}</view>
   </scroll-view>
   <swiper class="tab-content" current="{{currentTab}}" style="height:{{winHeight}}rpx" bindchange="swiperChange">
     <swiper-item wx:for="{{expertListi}}" wx:for-index="i" wx:for-item="items">
+      <ad class="ad1" unit-id="adunit-b7c12a23e9c8bfc6"></ad>
       <form class="formStyle" bindsubmit="formSubmit">
         <view class="searchBox">
           <view class="sname">
-            <input name="text" class="stext" maxlength="20" placeholder="请输入您的姓名" placeholder-class="place-holder" />
+            <input name="text" class="stext" maxlength="20" value="" placeholder="请输入您的姓名" placeholder-class="place-holder" />
           </view>
           <view class="selects">
             <picker bindchange="bindPickerChange" value="{{objectArray[index].id}}" name="font" range-key="title" range="{{objectArray}}">
@@ -78,7 +71,7 @@
           <view class="sectionSlide">
             <span class="h3Style">文字字号：</span>
             <slider class="sectionSlides" name="fontSize" block-size="20" block-color="#f60" value="30" bindchange="slider4change"
-              min="20" max="100" show-value />
+              min="20" max="80" show-value />
           </view>
           <view class="sectionSlide">
             <span class="h3Style">宽度：</span>
@@ -97,7 +90,7 @@
           <button class="sbutton" formType="submit"> 立即设计生成艺术字 </button>
         </view>
       </form>
-      <view style="font-size:32rpx;padding-bottom:30rpx;text-align:center;">客服QQ或微信:275333(备注:小程序)</view>
+      <view style="font-size:32rpx;padding-bottom:30rpx;text-align:center;">客服QQ或微信:275333(备注:艺术字生成)</view>
     </swiper-item>
   </swiper>
   <ad class="ad1" unit-id="adunit-a9dfc88a03acf3dd"></ad>

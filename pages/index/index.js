@@ -69,12 +69,14 @@ Page({
         width: e.detail.value['width'],
         height: e.detail.value['height'],
         fontId: 50,
+        alpha:100
       },
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       method:'POST',
       dataType:'json',
       success:(json) => {
         console.log(json);
+        console.log('../result/result?createdImg=' + json.data.result.path + '&width=' + e.detail.value['width'] + '&height=' + e.detail.value['height']);
         wx.navigateTo({
           url: '../result/result?createdImg=' + json.data.result.path + '&width=' + e.detail.value['width'] + '&height=' + e.detail.value['height']
         })
@@ -128,7 +130,7 @@ Page({
         var clientHeight = res.windowHeight,
           clientWidth = res.windowWidth,
           rpxR = 750 / clientWidth;
-        var calc = clientHeight * rpxR+50;
+        var calc = clientHeight * rpxR+300;
         console.log('calc',calc)
         that.setData({
           winHeight: calc
