@@ -2,14 +2,7 @@
   "pages":[
     "pages/index/index",
     "pages/result/result",
-    "pages/my/my",
-    "pages/wangming/wangming",
-    "pages/design/design",
-    "pages/logs/logs",
-    "pages/detail/detail",
-    "pages/duanzi/duanzi",
-    "pages/duanzi_detail/duanzi_detail",
-    "pages/cart/cart"
+    "pages/design/design"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -35,18 +28,6 @@
         "iconPath": "static/images/ic_design.png",
         "selectedIconPath": "static/images/ic_design_active.png",
         "text": "签名设计"
-      },
-      {
-        "pagePath": "pages/duanzi/duanzi",
-        "iconPath": "static/images/ic_laugh.png",
-        "selectedIconPath": "static/images/ic_laugh_active.png",
-        "text": "笑话段子"
-      },
-      {
-        "pagePath": "pages/wangming/wangming",
-        "iconPath": "static/images/ic_name.png",
-        "selectedIconPath": "static/images/ic_name_active.png",
-        "text": "网名大全"
       }
     ]
   }
