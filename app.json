@@ -1,8 +1,7 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/result/result",
-    "pages/design/design"
+    "pages/result/result"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -14,21 +13,5 @@
     "wxb2e976cef0f6facb",
     "wxa12f1b4e608253f8",
     "wx8041cab51c6ffcff"
-  ],
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "iconPath": "static/images/ic_home.png",
-        "selectedIconPath": "static/images/ic_home_active.png",
-        "text": "艺术字首页"
-      },
-      {
-        "pagePath": "pages/design/design",
-        "iconPath": "static/images/ic_design.png",
-        "selectedIconPath": "static/images/ic_design_active.png",
-        "text": "签名设计"
-      }
-    ]
-  }
+  ]
 }

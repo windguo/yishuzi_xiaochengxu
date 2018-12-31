@@ -6,8 +6,5 @@
     <button open-type="share" size='mini' type="warn" style="margin:0 20rpx;">分享给好友</button>
     <button bindtap="saveImageToPhotosAlbum" type="primary" size='mini'>保存图片</button>
   </view>
-  <view class="tips" bindtap="goDesignPage">
-    生成的艺术字不满意？需要独一无二的签名设计？点击这里
-  </view>
   <ad class="ad1" unit-id="adunit-a9dfc88a03acf3dd"></ad>
 </view>
