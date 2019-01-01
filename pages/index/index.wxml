@@ -5,7 +5,7 @@
   <swiper indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <swiper-item>
-      <view class="swiper_item" style="background:#FF1493;color:#ffff00;">限时免费生成各类艺术字</view>
+      <view class="swiper_item" style="background:#FF1493;color:#ffff00;">免费生成各类艺术字</view>
     </swiper-item>
     <swiper-item>
       <view class="swiper_item" style="background:#1E90FF;color:#ffff00;">艺术字生成收录了{{total}}个字体</view>
@@ -93,5 +93,4 @@
       <view style="font-size:32rpx;padding-bottom:30rpx;text-align:center;">客服QQ或微信:275333(备注:艺术字生成)</view>
     </swiper-item>
   </swiper>
-  <ad class="ad1" unit-id="adunit-a9dfc88a03acf3dd"></ad>
 </view>
