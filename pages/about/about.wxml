@@ -1,0 +1,18 @@
+<view class="container">
+    <header class="header">
+        <image class="icon" src="../../static/images/icon.jpeg" background-size="cover" />
+    </header>
+    <view class="intro">
+        一笔商务签字,一笔艺术签,人工手写签名,连笔签名,个性签名,专业解决签名问题,每一款都彰显个性。欢迎使用多提宝贵意见。
+    </view>
+    <view class="buttons">
+        <button class="default" size="default" type="warn" bindtap="previewImage">
+            点击此处打开微信群二维码,欢迎加入
+        </button>
+        <h2>长按图片保存到本地然后微信扫码即可加群</h2>
+        <h2>如果二维码失效或者其他问题辛苦联系客服</h2>
+    </view>
+    <view class='help'>
+        客服微信号：275333(密码：艺术字生成)
+    </view>
+</view>

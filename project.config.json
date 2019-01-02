@@ -36,13 +36,37 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 4,
 			"list": [
 				{
 					"id": 0,
 					"name": "result",
 					"pathName": "pages/result/result",
 					"query": "createdImg=https://www.yishuzi.com.cn/cache/xiaochengxu-20181228-15459680278951.png&width=400&height=200"
+				},
+				{
+					"id": -1,
+					"name": "wangming",
+					"pathName": "pages/wangming/wangming",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "wangming——上标",
+					"pathName": "pages/wangming_shangbiao/wangming_shangbiao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "about",
+					"pathName": "pages/about/about",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "chibang",
+					"pathName": "pages/chibang/chibang",
+					"query": ""
 				}
 			]
 		}

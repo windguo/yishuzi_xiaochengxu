@@ -90,7 +90,7 @@
           <button class="sbutton" formType="submit"> 立即设计生成艺术字 </button>
         </view>
       </form>
-      <view style="font-size:32rpx;padding-bottom:30rpx;text-align:center;">客服QQ或微信:275333(备注:艺术字生成)</view>
+      <view style="font-size:32rpx;padding-bottom:30rpx;text-align:center;line-height:50rpx;">如果有特殊要求或者对本小程序使用中遇到了问题，请添加客服QQ或微信:275333(备注:艺术字生成)</view>
     </swiper-item>
   </swiper>
 </view>

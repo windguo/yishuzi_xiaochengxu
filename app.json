@@ -1,17 +1,54 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/result/result"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "艺术字生成",
-    "navigationBarTextStyle":"black"
-  },
-  "navigateToMiniProgramAppIdList": [
-    "wxb2e976cef0f6facb",
-    "wxa12f1b4e608253f8",
-    "wx8041cab51c6ffcff"
-  ]
+	"pages": [
+		"pages/index/index",
+		"pages/result/result",
+		"pages/wangming/wangming",
+		"pages/wangming_shangbiao/wangming_shangbiao",
+		"pages/about/about",
+		"pages/shuzi_shangbiao/shuzi_shangbiao",
+		"pages/chibang/chibang",
+		"pages/shuzi_xiabiao/shuzi_xiabiao",
+		"pages/find/find"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#ffffff",
+		"navigationBarTitleText": "艺术字生成",
+		"navigationBarTextStyle": "black"
+	},
+	"navigateToMiniProgramAppIdList": [
+		"wxb2e976cef0f6facb",
+		"wxa12f1b4e608253f8",
+		"wx4e64b51d8fa37436",
+		"wxa53e3cf622d861ad",
+		"wx8041cab51c6ffcff"
+	],
+	"tabBar": {
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/images/ic_home.png",
+				"selectedIconPath": "static/images/ic_home_active.png",
+				"text": "艺术字首页"
+			},
+			{
+				"pagePath": "pages/wangming/wangming",
+				"iconPath": "static/images/ic_name.png",
+				"selectedIconPath": "static/images/ic_name_active.png",
+				"text": "艺术网名"
+			},
+			{
+				"pagePath": "pages/find/find",
+				"iconPath": "static/images/find.png",
+				"selectedIconPath": "static/images/find_active.png",
+				"text": "发现更多"
+			},
+			{
+				"pagePath": "pages/about/about",
+				"iconPath": "static/images/about.png",
+				"selectedIconPath": "static/images/about_active.png",
+				"text": "关于我们"
+			}
+		]
+	}
 }
