@@ -5,7 +5,8 @@
         <h2>请输入上标<span class="s">只支持英文大小写和数字</span></h2>
         <input bindinput="inputFuhaoFn" placeholder='输入右上角显示的字母或者数字' />
         <button bindtap="creatName" type="warn">立即生成</button>
-        <view class="ads">
+    </view>
+    <view class="ads">
             <ad unit-id="adunit-3fb4b0a48b56b0d7"></ad>
         </view>
         <view wx:if="{{result}}" class="resultView">
@@ -22,5 +23,4 @@
                 </button>
             </view>
         </view>
-    </view>
 </view>

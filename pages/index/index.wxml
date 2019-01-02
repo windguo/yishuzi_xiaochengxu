@@ -13,14 +13,14 @@
     <swiper-item>
       <view class="swiper_item" style="background:#FF00FF;color:#ffff00;font-size:40rpx;">
         <navigator target="miniProgram" open-type="navigate" app-id="wxb2e976cef0f6facb" path="" extra-data="" version="release">
-          找头像来 爱头像 ,可以浏览和设计头像哦
+          找头像来【爱头像】 ,可以浏览和DIY头像哦
         </navigator>
       </view>
     </swiper-item>
     <swiper-item>
-      <view class="swiper_item" style="background:#6495ED;color:#ffff00;font-size:50rpx;">
+      <view class="swiper_item" style="background:#6495ED;color:#ffff00;font-size:40rpx;">
         <navigator target="miniProgram" open-type="navigate" app-id="wxa12f1b4e608253f8" path="" extra-data="" version="release">
-          找网名来 爱网名 ，总有一款适合你
+          找网名来【爱网名】 ，总有一款适合你
         </navigator>
       </view>
     </swiper-item>
@@ -87,7 +87,7 @@
         <input name="yishuziFrom" style="display:none" value="xiaochengxu" />
         <input name="fontId" style="display:none" value="{{objectArray[index].id}}" />
         <view class="buttonWrap">
-          <button class="sbutton" formType="submit"> 立即设计生成艺术字 </button>
+          <button class="sbutton" formType="submit"> 立即生成艺术字 </button>
         </view>
       </form>
       <view style="font-size:32rpx;padding-bottom:30rpx;text-align:center;line-height:50rpx;">如果有特殊要求或者对本小程序使用中遇到了问题，请添加客服QQ或微信:275333(备注:艺术字生成)</view>
