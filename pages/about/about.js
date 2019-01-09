@@ -16,7 +16,7 @@ Page({
 			title: '关于我们'
 		});
 		wx.request({
-			url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=groupQrode',
+			url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=groupQrode&token=' + getApp().globalData.token,
 			method: 'GET',
 			dataType: 'json',
 			success: (json) => {

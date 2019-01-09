@@ -26,7 +26,7 @@ Page({
       hidden: false
     })
     wx.request({
-      url: 'https://www.yishuzi.com.cn/jianjie8_xiaochengxu_api/xiaochengxu/?getJson=class',
+			url: 'https://www.yishuzi.com.cn/jianjie8_xiaochengxu_api/xiaochengxu/?getJson=class&token=' + getApp().globalData.token,
       success: function (res) {
         console.log(res);
         that.setData({
@@ -69,6 +69,7 @@ Page({
         width: e.detail.value['width'],
         height: e.detail.value['height'],
         fontId: 50,
+				token: getApp().globalData.token,
         alpha:100
       },
       header: { 'content-type': 'application/x-www-form-urlencoded' },
@@ -139,7 +140,7 @@ Page({
     });
 
     wx.request({
-      url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=countNum',
+			url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=countNum&token=' + getApp().globalData.token,
       method: 'GET',
       dataType: 'json',
       success: (json) => {
@@ -152,7 +153,7 @@ Page({
     let _classid = [];
     let _expertListi = [];
     wx.request({
-      url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=class',
+			url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=class&token=' + getApp().globalData.token,
       method: 'GET',
       dataType: 'json',
       success: (json) => {
@@ -196,7 +197,7 @@ Page({
           objectArray: json.data.result
         });
         this.setData({
-          previewImage: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[0].id + '&text=' + _text +'&fontSize=28&width=250&height=60&fontColor=ff5a00'
+					previewImage: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[0].id + '&text=' + _text + '&fontSize=28&width=250&height=60&fontColor=ff5a00&token=' + getApp().globalData.token
         });
         wx.hideLoading();
       }
@@ -1380,7 +1381,7 @@ Page({
       _txt = '艺术字生成';
     }
     this.setData({
-      previewImage: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[e.detail.value].id + '&text=' + _txt +'&fontSize=28&width=250&height=60&fontColor=ff5a00',
+			previewImage: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=showPic&font=' + this.data.objectArray[e.detail.value].id + '&text=' + _txt + '&fontSize=28&width=250&height=60&fontColor=ff5a00&token=' + getApp().globalData.token,
       index: e.detail.value
     });
     console.log('previewImagepreviewImage', this.data.previewImage);

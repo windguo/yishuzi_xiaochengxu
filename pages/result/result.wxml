@@ -1,5 +1,7 @@
 <view class="alignCenter">
-  <ad class="ad1" unit-id="adunit-a9dfc88a03acf3dd"></ad>
+  <view style='height:120px;'>
+		<ad class="ad1" unit-id="adunit-a9dfc88a03acf3dd"></ad>
+	</view>
   <canvas class="sharsStyle" canvas-id='share'></canvas>
   <view class="btns">
     <button size='mini' bindtap="navigateBack" type="default">返回修改</button>
