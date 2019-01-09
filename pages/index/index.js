@@ -188,7 +188,7 @@ Page({
   },
   getListData: function (classid, _text) {
     wx.request({
-      url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=list&classid=' + classid,
+			url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=list&classid=' + classid + '&token=' + getApp().globalData.token,
       method: 'GET',
       dataType: 'json',
       success: (json) => {
