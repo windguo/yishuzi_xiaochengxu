@@ -1,0 +1,33 @@
+<view class="ad">
+  <ad unit-id="adunit-eb7f166d801ddb1a" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad>
+</view>
+<view class="alignCenter">
+  <view class="imagesStyle">
+    <image class="imagesStyleImg" src="{{createdImg}}" bindtap="previewImage" data-src="{{createdImg}}" />
+  </view>
+  <view class="btns">
+    <button bindtap="navigateBack" type="warn">返回修改</button>
+  </view>
+</view>
+<view class="wtitle">手写签名设计作品</view>
+  <view class="witems" wx:for="{{objectArray}}" wx:for-index="i" wx:for-item="items">
+      <navigator target="miniProgram" open-type="navigate" app-id="wx61c437bbdea20c24" path="/pages/hall/detail/index?classid={{objectArray[i].classid}}&id={{objectArray[i].id}}" extra-data="" version="release">
+          <view wx:if='{{objectArray[i].titlepic}}' class="previewImageStyle">
+              <image class="img" src='{{objectArray[i].titlepic}}' mode="widthFix"></image>
+          </view>
+      </navigator>
+  </view>
+
+
+<view class="contact">
+	<view class="a">
+		<contact-button 
+		type="default-light" 
+		size="50"
+		class='btn'
+		session-from="weapp"
+		>
+		</contact-button>
+	</view>
+	<text>客服</text>
+</view>

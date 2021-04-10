@@ -1,24 +1,32 @@
-@import "./wxParse/wxParse.wxss";
+@import "icon.wxss";
+Page{font-size: 32rpx;font-weight: 300;color: #282828;}
 
-/* .container{
-  margin:0 60rpx;
-  background: #ffffff;
-  font-weight:300
-} */
-
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-} 
-
-.mg{margin:0 40rpx;}
+.mg{margin:30rpx 40rpx 0;}
 .bgeee{background: #eee;}
 .ad1{margin:10rpx 0}
-.ads{margin:30rpx 0}
 
 .linkTo{padding:20rpx;font-size: 32rpx;background: #f8f8f8;color: #282828;display: flex;flex-direction: row;justify-content: space-between;border-radius: 20rpx;margin:20rpx 0}
 .linkTo .self{flex:1}
 .linkTo .linka{color: #555}
 .linkTo .linkb{color: #ff6677}
+.copyright{
+	margin:0 40rpx;
+	font-size: 30rpx;
+	font-weight: 100;
+	color: #999;
+}
+.ad{
+	transform: scale(0.9)!important;
+}
+
+.contact{
+	position: fixed;
+	z-index: 999;
+	right:30rpx;
+	bottom: 80rpx;
+	background: rgba(207, 67, 11, 0.9);
+	padding:15rpx;
+	border-radius: 20rpx;
+}
+.contact .a{text-align: center;}
+.contact text{color: #fffff0;}

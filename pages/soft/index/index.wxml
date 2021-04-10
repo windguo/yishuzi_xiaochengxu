@@ -1,0 +1,40 @@
+<view class="ad">
+  <ad unit-id="adunit-eb7f166d801ddb1a" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad>
+</view>
+<!-- banner开始 -->
+<swiper
+  indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}"
+  interval="{{interval}}"
+  duration="{{duration}}"
+>
+  <block wx:for="{{bannerArray}}">
+    <swiper-item>
+      <image class="img" src="{{item.picurl}}" mode='scaleToFill' />
+      <h2>{{item.name}}</h2>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- banner结束 -->
+<view class="bg">
+  <view class="box">
+    <form catchsubmit="submits">
+      <view class="li">
+        <input type="text" name="name" value="" placeholder="请输入姓名" />
+        <button type="primary" formType="submit" size="default" bindtap="defaultTap">立即免费设计(需要看完广告)</button>
+      </view>
+    </form>
+  </view>
+</view>
+<view class="contact">
+	<view class="a">
+		<contact-button 
+		type="default-light" 
+		size="50"
+		class='btn'
+		session-from="weapp"
+		>
+		</contact-button>
+	</view>
+	<text>客服</text>
+</view>

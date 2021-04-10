@@ -1,0 +1,108 @@
+Page{
+	background: #eee;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+} 
+.copyright{
+	padding:30rpx 0 50rpx 0;
+}
+
+.img{height:100rpx;width: 100%}
+.previewImageStyle{overflow: hidden;}
+.searchBox{
+  line-height: 80rpx;
+}
+.buttonWrap{
+  padding:30rpx 0 10rpx 0;
+  margin:0 40rpx;
+}
+.sectionSlide{
+  display: flex;
+}
+.sectionSlides{
+  width: 400rpx;
+  margin:0rpx 0rpx 0rpx 20rpx;
+}
+.ads{
+	margin-top: 20rpx;
+}
+.ad{
+	transform: scale(0.95)!important;
+}
+.formStyle{
+  background: #fff;
+  opacity: 0.9;
+  margin:20rpx;
+  padding:40rpx 0;
+  border-radius: 10rpx;
+}
+.selectTextColor,.selectBackgroundColor{
+  display: flex;
+}
+.picker{
+  font-size:30rpx;
+}
+.colorPicker{
+  font-size: 32rpx;
+}
+.h3Style{
+  font-size: 32rpx;
+  text-align: right;
+  width: 160rpx;
+  color: #666;
+}
+.searchBox{
+  margin:0 40rpx;
+}
+.searchBox .stext {
+  border:5rpx solid #e68067;
+  background:#fffff0;
+  border-radius: 20rpx;
+  padding:25rpx 40rpx;
+  margin-bottom:10rpx;
+	font-size: 36rpx;
+  -webkit-box-shadow:8rpx 8rpx 8rpx #e2e2e2 inset;
+}
+.place-holder{
+  color: #e68067
+}
+.sbutton{
+  background-image: linear-gradient(-40deg, #ff5858 0%, #f09819 100%);
+  color: #fff;
+  font-size:36rpx;
+  border-radius: 20rpx;
+	padding:15rpx 0;
+  font-weight: 300
+}
+.searchBox .sbutton{
+  margin-top: 20rpx;
+}
+
+h2{margin:20rpx 20rpx 0;text-align: center;font-size:36rpx;color: #666;display: block;}
+.juziListViews{margin:30rpx;background:#fff;padding:40rpx;border-radius: 20rpx;text-align: left;}
+.juziListViews h3{font-size: 36rpx;display:block;padding-bottom:20rpx;font-weight: 300;line-height: 60rpx;}
+.juziListViews p{font-size:30rpx;color: #666;}
+
+.baoxiaoListViews{margin:30rpx;background:#fff;padding:40rpx;border-radius: 20rpx;text-align: left;}
+.baoxiaoListViews h3{font-size: 36rpx;display:block;padding-bottom:20rpx;font-weight: 300;line-height: 60rpx;}
+.baoxiaoListViews p{font-size:30rpx;color: #666;}
+
+.tips{
+  margin:30rpx 20rpx 10rpx;
+  padding:20rpx;
+  background: #f0fff0;
+  border-radius: 20rpx;
+  border:1rpx solid rgb(247, 215, 112);
+  text-align: center;
+}
+.tips .log{
+  background: orangered;
+  padding:0rpx 10rpx;
+  margin:0 10rpx;
+  border-radius: 10rpx;
+  color: #fff;
+}

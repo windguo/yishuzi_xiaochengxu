@@ -10,3 +10,4 @@ Page{
 }
 .list .sp{color: #666;font-size: 30rpx;}
 .hr{height: 30rpx;}
+.ads{margin-top:20rpx;}

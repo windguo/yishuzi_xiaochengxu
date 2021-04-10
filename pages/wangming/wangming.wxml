@@ -1,6 +1,6 @@
 <view class="container">
   <view class="ads">
-    <ad unit-id="adunit-eb429ad648d86b16"></ad>
+    <ad class="ad" unit-id="adunit-eb429ad648d86b16"></ad>
   </view>
   <view class="mg">
     <navigator url='../chibang/chibang'>

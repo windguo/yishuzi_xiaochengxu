@@ -14,6 +14,43 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+function checkIsLogin() {
+	if (!wx.getStorageSync('storageLoginedUsernames')) {
+		wx.redirectTo({
+			url: '/pages/login/login'
+		});
+	}
+}
+
+function extract_chinese_length(txt) {
+	var reg = /[\u4e00-\u9fa5]/g;
+	var names = txt.match(reg);
+	let t;
+	if (names != null) {
+		t = names.join("");
+		return t.length;
+	} else {
+		return 0;
+	}
+
+}
+
+function extract_chinese(txt) {
+	var reg = /[\u4e00-\u9fa5]/g;
+	var names = txt.match(reg);
+	let t;
+	if (names != null) {
+		t = names.join("");
+		return t;
+	} else {
+		return txt;
+	}
+};
+
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+	checkIsLogin: checkIsLogin,
+	extract_chinese: extract_chinese,
+	extract_chinese_length: extract_chinese_length
 }

@@ -1,0 +1,7 @@
+<view class="contariner">
+	<view class="a">
+		<image class="urlStyle" bindtap="previewImages" data-src="{{url}}" src="{{url}}" mode="aspectFill"></image>
+	</view>
+	<view class="text">点击上面小程序码，长按图片在弹出菜单选择发送给好友或者保存本地,发送到朋友圈;如果有不少于30人通过此小程序码访问并且点击底部页卡【我的】完成授权操作后，您将有机会获得免费设计一款签名的机会一次，分享越多奖励越多。</view>
+	<view class="text">如数量已经满足或者有疑问请联系微信:4742882(验证:艺术字生成)</view>
+</view>

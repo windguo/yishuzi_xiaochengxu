@@ -1,0 +1,25 @@
+<view class="wrap">
+    <view class="h2title">
+        我们的手写签名案例
+    </view>
+    <view class="items" wx:for="{{objectArray}}" wx:for-index="i" wx:for-item="items">
+        <navigator target="miniProgram" open-type="navigate" app-id="wx61c437bbdea20c24" path="/pages/hall/detail/index?classid={{objectArray[i].classid}}&id={{objectArray[i].id}}" extra-data="" version="release">
+            <view wx:if='{{objectArray[i].titlepic}}' class="previewImageStyle">
+                <image class="img" src='{{objectArray[i].titlepic}}' mode="widthFix"></image>
+            </view>
+        </navigator>
+    </view>
+</view>
+
+<view class="contact">
+	<view class="a">
+		<contact-button 
+		type="default-light" 
+		size="50"
+		class='btn'
+		session-from="weapp"
+		>
+		</contact-button>
+	</view>
+	<text>客服</text>
+</view>

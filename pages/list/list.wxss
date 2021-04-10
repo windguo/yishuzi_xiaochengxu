@@ -1,0 +1,11 @@
+.ads{
+	margin-top:30rpx;
+}
+.listViews{background: #fff;margin:40rpx;border-radius:20rpx;text-align: center;padding:30rpx;}
+.listViews h2{padding-bottom:20rpx;display: block;color:#999;}
+.img{height:100rpx;width: 100%}
+.listViews .m{
+	display: flex;
+	justify-content: space-between;
+}
+.scoll-h{height: 100%;}

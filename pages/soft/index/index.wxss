@@ -1,0 +1,35 @@
+Page{
+  background: #fff!important;
+}
+swiper {
+	height: 350rpx;
+  border-radius: 20rpx;
+}
+swiper .img {
+	height: 300rpx;
+	width: 100%;
+}
+.bg{
+  margin:30rpx 0;
+  padding:30rpx 0;
+}
+.box{
+  border-radius: 10rpx;
+  padding:40rpx;
+}
+.box .li input{
+  background: #fff;
+  border-radius: 10rpx;
+  border:1rpx solid orange;
+  padding:25rpx;
+  margin-bottom: 40rpx;
+}
+.undis{
+  display: none!important
+}
+.wxstyle{
+  margin-bottom:40rpx;
+  color: orangered;
+  font-size: 36rpx;
+}
+.ad{margin-bottom:20rpx;}

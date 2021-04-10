@@ -1,0 +1,26 @@
+<view>
+    <view class="topad">
+        <h2 class="title">纯手写签名如果需要请联系微信客服：275333(需要签名) 有偿服务</h2>
+    </view>
+    <view class="h2title">
+        我们的手写签名案例
+    </view>
+    <view style="text-align:center" wx:for="{{objectArray}}" wx:for-index="i" wx:for-item="items">
+        <view style="border-top:2px solid #ebebeb" wx:if='{{objectArray[i].titlepic}}' class="previewImageStyle">
+            <image src='{{objectArray[i].titlepic}}' mode='center'></image>
+        </view>
+    </view>
+</view>
+
+<view class="contact">
+	<view class="a">
+		<contact-button 
+		type="default-light" 
+		size="50"
+		class='btn'
+		session-from="weapp"
+		>
+		</contact-button>
+	</view>
+	<text>点击咨询</text>
+</view>

@@ -1,0 +1,19 @@
+Page{
+	background: #eee;
+}
+.contariner{
+	margin:40rpx;
+	border-radius: 20rpx;
+	background: #fff;
+	padding:40rpx;
+	line-height: 60rpx;
+}
+.contariner h2{font-size: 40rpx;}
+.contariner .a{
+	text-align: center;
+}
+.contariner .urlStyle{
+	width:230px;
+	height:230px;
+}
+.contariner .text{font-size: 36rpx;text-indent: 2em;}

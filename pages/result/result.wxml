@@ -1,11 +1,23 @@
 <view class="alignCenter">
-  <view style='height:120px;'>
-		<ad class="ad1" unit-id="adunit-a9dfc88a03acf3dd"></ad>
-	</view>
-  <canvas class="sharsStyle" canvas-id='share'></canvas>
-  <view class="btns">
-    <button size='mini' bindtap="navigateBack" type="default">返回修改</button>
-    <button open-type="share" size='mini' type="warn" style="margin:0 20rpx;">分享给好友</button>
-    <button bindtap="saveImageToPhotosAlbum" type="primary" size='mini'>保存图片</button>
+  <view class="imagesStyle">
+    <image class="" src="{{createdImg}}" bindtap="previewImage" data-src="{{createdImg}}" mode="center" />
+    <h3>温馨提示：点击图片可以看完整大图哦</h3>
   </view>
+  <view style="position:absolute;top:-9999999px;left:-9999999px;"><canvas class="sharsStyle" canvas-id='share'></canvas></view>
+	<view>
+		<ad unit-id="adunit-b3d0ba1489481a35" ad-type="video" ad-theme="white"></ad>
+  </view>
+  <view class="btns">
+    <button size='mini' bindtap="navigateBack" type="default">返回</button>
+    <button open-type="share" size='mini' type="warn">分享</button>
+    <button bindtap="saveImageToPhotosAlbum" type="primary" size='mini'>看广告保存图片</button>
+  </view>
+  <view class="wtitle">手写签名设计作品</view>
+		<view class="witems" wx:for="{{objectArray}}" wx:for-index="i" wx:for-item="items">
+        <navigator target="miniProgram" open-type="navigate" app-id="wx61c437bbdea20c24" path="/pages/hall/detail/index?classid={{objectArray[i].classid}}&id={{objectArray[i].id}}" extra-data="" version="release">
+            <view wx:if='{{objectArray[i].titlepic}}' class="previewImageStyle">
+                <image class="img" src='{{objectArray[i].titlepic}}' mode="widthFix"></image>
+            </view>
+        </navigator>
+    </view>
 </view>

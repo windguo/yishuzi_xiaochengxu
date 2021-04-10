@@ -1,0 +1,25 @@
+<view class="container bgeee">
+    <scroll-view scroll-with-animation="true" scroll-y="true" style="height:{{winHeight}}rpx;" bindscrolltolower="scrolltolowerLoadData">
+        <view class="ads">
+            <ad class="ad" unit-id="adunit-eb429ad648d86b16"></ad>
+        </view>
+        <view class="lists">
+					<view wx:for="{{contentArray}}" wx:for-index="i" wx:for-item="item">
+            <view wx:if="{{i == 15}}">
+                <view class="ads">
+                    <ad class="ad" unit-id="adunit-eb429ad648d86b16"></ad>
+                </view>
+            </view>
+            <view class="listViews">
+                <navigator url='../../pages/creat/creat?id={{item.id}}' hover-class="none">
+                    <image class="img" mode='aspectFill' src="{{item.titlepic}}"></image>
+                    <view class="m">
+											<view class="t">{{item.title}}</view>
+											<view class="created_number">已生成<span style="color:#c00">{{item.created_number}}</span>次</view>
+										</view>
+                </navigator>
+            </view>
+        </view>
+				</view>
+    </scroll-view>
+</view>

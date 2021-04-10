@@ -1,0 +1,31 @@
+.topad{font-weight:300;background:#FF1493;color:#ffff00;}
+.topad h2{display: block;}
+.h2title{font-weight: 300;font-size: 50rpx;padding:30rpx 0;text-align: center;color: #FF1493;background: #ebebeb;}
+.title{
+	padding:30rpx 0;
+	text-align: center;
+	font-size:40rpx;
+}
+h3{
+	background: #fff;
+	display: block;
+	color: #c00;
+	padding:40rpx;
+}
+.link{
+	background: #fffff0;
+	border-top: 1px solid #f8f8f8;
+	padding:40rpx;
+	color: #000;
+}
+.contact{
+	position: fixed;
+	z-index: 9999;
+	right:80rpx;
+	bottom: 80rpx;
+	background: rgba(207, 67, 11, 0.9);
+	padding:15rpx;
+	border-radius: 20rpx;
+}
+.contact .a{text-align: center;}
+.contact text{color: #fffff0;}

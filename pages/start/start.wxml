@@ -1,0 +1,36 @@
+<view class="countDownNum" bindtap="goHome">
+	<view>跳过</view>
+	<view class="num">{{countDownNum}}</view>
+</view>
+<swiper
+	class="swiper-box"
+	indicator-dots="true"
+  autoplay="{{autoplay}}"
+  interval="5000"
+  duration="200"
+	circular="true"
+	style="height:{{height}}px"
+	bindchange='onSlideChangeEnd'
+>
+    <swiper-item>
+      <view class="wrap first">
+				one
+			</view>
+    </swiper-item>
+		<swiper-item>
+      <view class="wrap two">
+				two
+			</view>
+    </swiper-item>
+		<swiper-item>
+      <view class="wrap three">
+				three
+			</view>
+    </swiper-item>
+		<swiper-item>
+      <view class="wrap four">
+				four
+				<button hidden='{{autoplay}}' class="goHomeStyle anim" bindtap='goHome'>立即体验</button>
+			</view>
+    </swiper-item>
+</swiper>

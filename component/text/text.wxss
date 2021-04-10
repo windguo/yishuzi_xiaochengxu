@@ -1,0 +1,55 @@
+.normal{
+	background:#fffff0;
+	line-height:100rpx;
+	display: flex;
+}
+.normal .icon{
+	padding:0 20rpx 0 40rpx;
+	color: red;
+}
+
+/* 文字向上滚动开始 */
+.textwrap .textUp{
+	color: #666;
+	height:100rpx;
+	line-height: 100rpx;
+	background: #fff;
+}
+.textwrap .textUp .icon{
+	font-size: 34rpx;
+	padding:0 40rpx;
+}
+.textwrap .textUp .icon span{
+	color: #ff0;
+	font-weight: 300;
+}
+.newMember{
+	display: flex;
+	justify-content: space-around;
+}
+.first{
+	background: #e66767;
+	color:#fff;
+}
+.second{
+	background: #c44569;
+	color:#fff;
+	display: flex;
+}
+.three{
+	background: #e15f41;
+	color: #fff;
+}
+.second text,
+.second span{
+	white-space: nowrap;
+}
+.user{
+	color: #ff0;
+	font-weight: 300;
+	max-width: 140rpx;
+	overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* 文字向上滚动结束 */

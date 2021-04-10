@@ -33,7 +33,12 @@ Page{
   height:225px;
 }
 .btns{
-  margin:30rpx 0;
+  margin:50rpx 0 30rpx 0;
+  display: flex;
+  justify-content: space-around
+}
+.btns button{
+  font-size: 34rpx;
 }
 .tips{
   background: #fffff0;
@@ -41,4 +46,44 @@ Page{
   margin-bottom:30rpx;
   font-size: 40rpx;
   color: brown;
+}
+h2{margin:40rpx 0 20rpx 0;text-align: center;font-size:36rpx;color: #666;display: block;}
+
+.imagesStyle{margin: 30rpx 20rpx;background: #fff;border-radius: 20rpx;}
+.imagesStyle image{width:90%;height:300rpx}
+.imagesStyle h3{margin-top:10rpx;padding-bottom:50rpx;display: block;color:#999;font-size:30rpx;}
+
+.listViews{flex:1;margin:10rpx 8rpx;background:#fff;padding:10rpx;border-radius: 10rpx;text-align: center}
+.layout_vertical{
+  flex-flow: row wrap;
+  display: flex;
+  flex-direction: row;
+  margin:10rpx 20rpx 20rpx;
+}
+
+.baoxiaoListViews{margin:20rpx;background:#fff;padding:40rpx;border-radius: 20rpx;text-align: left;}
+.baoxiaoListViews h3{font-size: 36rpx;display:block;padding-bottom:20rpx;font-weight: 300;line-height: 60rpx;}
+.baoxiaoListViews p{font-size:30rpx;color: #666;}
+
+swiper{height:300rpx;font-weight: 300}
+.swiper_item{text-align:center;font-size:50rpx;line-height:140rpx;height:300rpx;}
+swiper .img{height:300rpx;width:100%}
+
+
+.wtitle{
+  font-size: 40rpx;
+  text-align: center;
+  margin-top:20rpx;
+  color: orangered;
+}
+.witems{
+  margin:40rpx 40rpx 0;
+}
+.witems .img{
+  margin:0 auto;
+	width: 95%;
+	border-radius: 20rpx;
+  padding:20rpx;
+  background: #fff;
+	border: 1rpx solid #eee;
 }

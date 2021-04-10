@@ -1,0 +1,14 @@
+<view class="container bgeee">
+	<view class="ads">
+		<ad class="ad" unit-id="adunit-eb429ad648d86b16"></ad>
+	</view>
+	<view class="fontSizes">
+	</view>
+	<view class="node-list">
+			<block wx:for="{{expertList}}">
+					<navigator class="node-item" url="../list/list?classid={{item.classid}}&classname={{item.classname}}" hover-class="navigator-hover">
+							{{item.classname}}
+					</navigator>
+			</block>
+	</view>
+</view>

@@ -2,7 +2,7 @@
 Page{
     background:#eee;
 }
-.container{font-size: 36rpx;margin-top:80rpx;background: none;}
+.container{font-size: 36rpx;background: none;}
 .container input{
     margin:30rpx 0;
     background: #fff;

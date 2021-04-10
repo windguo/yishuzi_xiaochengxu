@@ -1,0 +1,39 @@
+<view class="container bgeee">
+	<view class="header">
+		<image src="{{avatarUrl}}" background-size="cover"></image>
+		<view class="texts">
+			<view class="text">{{info.username}}</view>
+			<view class="text2">
+				积分:{{info.userfen}}
+			</view>
+			<view class="text2">邀请人数:{{num}}</view>
+		</view>
+	</view>
+	<view class="list">
+		<navigator url="../about/about" hover-class="navigator-hover">
+				<view class="flex">
+					<view class="it">
+						<text class="icon icon-info"></text>
+						关于我们
+					</view>
+					<text class="r icon icon-right"></text>
+				</view>
+		</navigator>
+		<navigator url="../createwm/index" hover-class="navigator-hover">
+				<view class="flex">
+					<view class="it">
+						<text class="icon icon-info"></text>
+						生成我的推广码
+					</view>
+					<text class="r icon icon-right"></text>
+				</view>
+		</navigator>
+		<view class="flex" bindtap='loginout'>
+			<view class="it">
+				<text class="icon icon-out"></text>
+				退出登录
+			</view>
+			<text class="r icon icon-right"></text>
+		</view>
+	</view>
+</view>

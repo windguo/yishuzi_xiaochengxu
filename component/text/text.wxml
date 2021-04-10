@@ -1,0 +1,23 @@
+<!-- 单行文字向上滚动开始 -->
+<view class="textwrap">
+	<swiper class='textUp' vertical="true" autoplay="true" circular="true" interval="5000" display-multiple-items='1'>
+			<block wx:for-index="idx" wx:for='{{textData}}'>
+				<swiper-item>
+					<view class="icon icon-notice first">
+						微信授权成功送<span>5</span>积分,每生成一次扣<span>1</span>积分
+					</view>
+				</swiper-item>
+				<swiper-item>
+					<view class="icon icon-profile second">
+						<text>欢迎</text><view class="user">{{username}}</view><text>在</text><span>{{registertime}}</span><text>加入,领取了</text><span>5</span><text>积分</text>
+					</view>
+				</swiper-item>
+				<swiper-item>
+					<view class="icon icon-friend_add_light three">
+						今日新增<span>{{todayRegister}}</span>名会员,共有<span>{{members}}</span>名
+					</view>
+				</swiper-item>
+			</block> 
+	</swiper>
+</view>
+<!-- 单行文字向上滚动结束 -->

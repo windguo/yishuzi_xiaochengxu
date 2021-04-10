@@ -1,0 +1,79 @@
+<view class="container bgeee">
+	<view class="ads">
+		<ad unit-id="adunit-b3d0ba1489481a35" ad-type="video" ad-theme="white"></ad>
+    </view>
+    <view class="tips">
+        提示:如遇问题,先点击<text class="log" bindtap='loginout'>退出</text>,再重新操作
+        </view>
+    <form class="formStyle" bindsubmit="formSubmit">
+        <view class="searchBox">
+            <view class="sname">
+                <input name="text" class="stext" bindblur="titleBindblur" maxlength="20" value="{{globalTitle}}" placeholder="请输入您的文字" placeholder-class="place-holder" />
+            </view>
+            <view class="selects">
+                <view style="display: flex;">
+                    <span class="h3Style">当前字体：</span>
+                    <view class="picker">
+                        {{contentArray.title}}
+                    </view>
+                </view>
+                <view wx:if='{{contentArray.titlepic}}' class="previewImageStyle">
+                    <image src='{{contentArray.titlepic}}' class="img" mode='aspectFill'></image>
+                </view>
+            </view>
+            <view class="selectTextColor">
+                <span class="h3Style">文字颜色：</span>
+                <picker bindchange="bindPickerTextColorChange" value="{{textColorArrayIndex}}" name="fontColor" range-key="name"
+                    range="{{textColorArray}}">
+                    <view class="colorPicker" style="color:{{textColorArray[textColorArrayIndex].color}};padding:0 20rpx;">
+                        {{textColorArray[textColorArrayIndex].name}}
+                    </view>
+                </picker>
+            </view>
+            <view class="selectBackgroundColor">
+                <span class="h3Style">背景颜色：</span>
+                <picker bindchange="bindPickerBackgroundColorChange" value="{{backgroundColorArrayIndex}}" name="bgColor"
+                    range-key="name" range="{{backgroundColorArray}}">
+                    <view class="colorPicker" style="background:{{backgroundColorArray[backgroundColorArrayIndex].backgroundColor}};border-radius:10rpx;padding:0 20rpx;color:{{backgroundColorArray[backgroundColorArrayIndex].color}}">
+                        {{backgroundColorArray[backgroundColorArrayIndex].name}}
+                    </view>
+                </picker>
+            </view>
+            <view class="sectionSlide">
+                <span class="h3Style">文字字号：</span>
+                <slider class="sectionSlides" name="fontSize" block-size="20" block-color="#f60" value="30" bindchange="slider4change"
+                    min="20" max="80" show-value />
+            </view>
+            <view class="sectionSlide">
+                <span class="h3Style">宽度：</span>
+                <slider class="sectionSlides" name="width" block-size="20" block-color="#f60" value="300" bindchange="slider4change"
+                    min="30" max="400" show-value />
+            </view>
+            <view class="sectionSlide">
+                <span class="h3Style">高度：</span>
+                <slider class="sectionSlides" name="height" block-size="20" block-color="#f60" value="100" bindchange="slider4change"
+                    min="30" max="200" show-value />
+            </view>
+        </view>
+        <input name="yishuziFrom" style="display:none" value="xiaochengxu" />
+        <input name="fontId" style="display:none" value="{{objectArray[index].id}}" />
+        <view class="buttonWrap">
+            <button class="sbutton" formType="submit"> 立即生成艺术字 </button>
+        </view>
+    </form>
+		<view class="copyright">
+			艺术字生成的艺术字生成工具仅为字体预览和学习之用，如需用于商业用途请联系字体公司购买授权。
+		</view>
+</view>
+<view class="contact">
+	<view class="a">
+		<contact-button 
+		type="default-light" 
+		size="50"
+		class='btn'
+		session-from="weapp"
+		>
+		</contact-button>
+	</view>
+	<text>客服</text>
+</view>
