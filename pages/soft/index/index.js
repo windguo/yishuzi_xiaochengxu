@@ -3,37 +3,36 @@ let isAdFlag = false;
 const app = getApp()
 Page({
   data: {
-    name:'',
-    bannerArray: [
-      {
-        picurl:'/static/images/banner/1.jpg'
+    name: '',
+    bannerArray: [{
+        picurl: '/static/images/banner/1.jpg'
       },
       {
-        picurl:'/static/images/banner/2.jpg'
+        picurl: '/static/images/banner/2.jpg'
       },
       {
-        picurl:'/static/images/banner/3.jpg'
+        picurl: '/static/images/banner/3.jpg'
       },
       {
-        picurl:'/static/images/banner/4.jpg'
+        picurl: '/static/images/banner/4.jpg'
       },
       {
-        picurl:'/static/images/banner/5.jpg'
+        picurl: '/static/images/banner/5.jpg'
       },
       {
-        picurl:'/static/images/banner/6.jpg'
+        picurl: '/static/images/banner/6.jpg'
       },
       {
-        picurl:'/static/images/banner/7.jpg'
+        picurl: '/static/images/banner/7.jpg'
       },
       {
-        picurl:'/static/images/banner/8.jpg'
+        picurl: '/static/images/banner/8.jpg'
       },
       {
-        picurl:'/static/images/banner/9.jpg'
+        picurl: '/static/images/banner/9.jpg'
       },
       {
-        picurl:'/static/images/banner/10.jpg'
+        picurl: '/static/images/banner/10.jpg'
       }
     ],
     userid: wx.getStorageSync('storageLoginedUserId'),
@@ -44,39 +43,39 @@ Page({
     duration: 500
   },
   showVideoAd: function () {
-		let that = this;
-		let videoAd = wx.createRewardedVideoAd({
-			adUnitId: 'adunit-3c1d326d0ef1cf22'
-		});
-		videoAd.load()
-			.then(() => {
-				videoAd.show();
-				isAdFlag = false;
-			})
-			.catch(err => {
-				console.log('err.errMsgerr.errMsg---', err.errCode);
-				if (err.errCode) {
-					isAdFlag = true;
-					wx.showModal({
-						title: '提示信息',
-						content: '请重新【点击立即免费】按钮'
-					})
-				}
-			})
-		videoAd.onClose(res => {
-			// 用户点击了【关闭广告】按钮
-			// 小于 2.1.0 的基础库版本，res 是一个 undefined
-			if (res && res.isEnded || res === undefined) {
-				console.log('正常播放结束，可以下发游戏奖励');
-				that.results();
-				// 正常播放结束，可以下发游戏奖励
-			} else {
-				console.log('播放中途退出，不下发游戏奖励');
-				// 播放中途退出，不下发游戏奖励
-			}
-		})
-	},
-  results(){
+    let that = this;
+    let videoAd = wx.createRewardedVideoAd({
+      adUnitId: 'adunit-3c1d326d0ef1cf22'
+    });
+    videoAd.load()
+      .then(() => {
+        videoAd.show();
+        isAdFlag = false;
+      })
+      .catch(err => {
+        console.log('err.errMsgerr.errMsg---', err.errCode);
+        if (err.errCode) {
+          isAdFlag = true;
+          wx.showModal({
+            title: '提示信息',
+            content: '请重新【点击立即免费】按钮'
+          })
+        }
+      })
+    videoAd.onClose(res => {
+      // 用户点击了【关闭广告】按钮
+      // 小于 2.1.0 的基础库版本，res 是一个 undefined
+      if (res && res.isEnded || res === undefined) {
+        console.log('正常播放结束，可以下发游戏奖励');
+        that.results();
+        // 正常播放结束，可以下发游戏奖励
+      } else {
+        console.log('播放中途退出，不下发游戏奖励');
+        // 播放中途退出，不下发游戏奖励
+      }
+    })
+  },
+  results() {
     wx.navigateTo({
       url: '../result/index?name=' + this.data.name
     })
@@ -86,13 +85,13 @@ Page({
       title: '免费设计签名',
     })
   },
-  rand(){
-    var num = "";   //定义用户编号
+  rand() {
+    var num = ""; //定义用户编号
     for (var i = 0; i < 4; i++) //4位随机数，用以加在时间戳后面。
     {
-        num += Math.floor(Math.random() * 10);
+      num += Math.floor(Math.random() * 10);
     }
-    num = new Date().getTime() + num;  //时间戳，用来生成用户编号。
+    num = new Date().getTime() + num; //时间戳，用来生成用户编号。
     return num;
   },
   onShareAppMessage: function (res) {
@@ -114,31 +113,33 @@ Page({
       }
     }
   },
-  submits(e){
-    console.log('....e....',e);
+  submits(e) {
+    console.log('....e....', e);
     var that = this;
     wx.showLoading({
       title: '设计中...'
     });
     this.setData({
-      name:e.detail.value.name
+      name: e.detail.value.name
     })
-    console.log('.....name....',this.data.name)
-    if(e.detail.value.name == ''){
+    console.log('.....name....', this.data.name)
+    if (e.detail.value.name == '') {
       wx.showModal({
-        content:'请输入姓名'
+        content: '请输入姓名'
       })
       wx.hideLoading();
       return false
-    }else{
+    } else {
       wx.request({
         url: 'https://www.yishuzi.com.cn/shop_xiaochengxu_api/wx-yishuzishengcheng_safe.php?content=' + this.data.name, // 目标服务器url
-        header: { 'content-type': 'application/x-www-form-urlencoded' },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
         method: 'GET',
         dataType: 'json',
         success: (res) => {
-          console.log('=====res====',res.data.result.errmsg)
-          if(res.data.result.errmsg == 'ok'){
+          console.log('=====res====', res.data.result.errmsg)
+          if (res.data.result.errmsg == 'ok') {
             wx.hideLoading()
             this.showVideoAd();
             // const that = this
@@ -253,21 +254,21 @@ Page({
             //       //     })
             //       //   }
             //       // })
-                    
+
             //       // wx.hideLoading();
 
             //     }
             //   }
             // })
-          }else{
+          } else {
             wx.showModal({
-              content:'因相关法律和要求，相关搜索结果不予展示'
+              content: '因相关法律和要求，相关搜索结果不予展示'
             });
             wx.hideLoading();
           }
         }
       });
     }
-    
+
   }
 })
