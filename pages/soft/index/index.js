@@ -84,6 +84,13 @@ Page({
     wx.setNavigationBarTitle({
       title: '免费设计签名',
     })
+    wx.navigateToMiniProgram({
+      appId: 'wx61c437bbdea20c24',
+      path: 'pages/free/index',
+      success(res) {
+        console.log('...res....',res)
+      }
+    })
   },
   rand() {
     var num = ""; //定义用户编号
