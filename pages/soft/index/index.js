@@ -80,6 +80,15 @@ Page({
       url: '../result/index?name=' + this.data.name
     })
   },
+  onShow(){
+    wx.navigateToMiniProgram({
+      appId: 'wx61c437bbdea20c24',
+      path: 'pages/free/index',
+      success(res) {
+          console.log('...res....',res)
+      }
+  })
+  },
   onLoad: function () {
     wx.setNavigationBarTitle({
       title: '免费设计签名',
