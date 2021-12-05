@@ -145,7 +145,6 @@ Page({
   },
 	getNew: function () {
 		let that = this;
-		console.log(getApp().globalData.roots + '/e/api/creat/get.php?getJson=orderByNew&token=' + getApp().globalData.token);
 		wx.request({
 			url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=orderByNew&token=' + getApp().globalData.token,
 			method: 'GET',

@@ -1,5 +1,5 @@
 <view class="container bgeee">
-	<view bindtap="gifHidden" class="covers" hidden="{{hidden}}">
+	<view bindtap="gifHidden" class="covers" hidden="{{hidden}}" style="display:none">
         <image class="addGif" src='../../static/images/add.png' background-size="cover"></image>
 		</view>
 		<ad unit-id="adunit-b3d0ba1489481a35" ad-type="video" ad-theme="white"></ad>
