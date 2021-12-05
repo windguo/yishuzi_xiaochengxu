@@ -13,9 +13,9 @@ Page({
 				userid: wx.getStorageSync('storageLoginedUserId'),
 				usernames: wx.getStorageSync('storageLoginedUsernames')
 			});
-			console.log('https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=designList&token=' + getApp().globalData.token);
+			console.log(getApp().globalData.roots + '/e/api/creat/get.php?getJson=designList&token=' + getApp().globalData.token);
         wx.request({
-					url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=designList&token=' + getApp().globalData.token,
+					url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=designList&token=' + getApp().globalData.token,
             method: 'GET',
             dataType: 'json',
             success: (json) => {
@@ -35,7 +35,7 @@ Page({
     }
     return {
       title: '一笔签名设计,快来申请定制独一无二的签名',
-			imageUrl:'https://www.yishuzi.com.cn/d/file/2019/05-10/afebf15a3288d733a0333c2e91313464.jpeg',
+			imageUrl:getApp().globalData.roots + '/d/file/2019/05-10/afebf15a3288d733a0333c2e91313464.jpeg',
       path:'/pages/design/design?share=1',
       success: (res) => {
         wx.showToast({

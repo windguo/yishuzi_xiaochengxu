@@ -40,7 +40,7 @@ Page({
 	ad: function () {
 		let that = this;
 		wx.request({
-			url: 'https://www.yishuzi.com.cn/e/api/xiaochengxu/yishuzi_shengcheng/?getJson=ad&adPage=index',
+			url: getApp().globalData.roots + '/e/api/xiaochengxu/yishuzi_shengcheng/?getJson=ad&adPage=index',
 			method: 'GET',
 			dataType: 'json',
 			success: (json) => {
@@ -64,7 +64,7 @@ Page({
 		});
 		let that = this;
 		wx.request({
-			url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=upShareNumber&token=' + getApp().globalData.token,
+			url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=upShareNumber&token=' + getApp().globalData.token,
 			data: {
 				sessionkey: this.data.sessionkey,
 				ecmsfrom: 'xiaochengxu',
@@ -118,7 +118,7 @@ Page({
 		this.ad();
     // 统计
     wx.request({
-      url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=countNum&token=' + getApp().globalData.token,
+      url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=countNum&token=' + getApp().globalData.token,
       method: 'GET',
       dataType: 'json',
       success: (json) => {
@@ -131,7 +131,7 @@ Page({
 		this.getNew();
     this.getHot();
     wx.request({
-      url: 'https://www.yishuzi.com.cn/shop_xiaochengxu_api/wx-sxqmsj.php?getJson=column&classid=9999',
+      url: getApp().globalData.roots + '/shop_xiaochengxu_api/wx-sxqmsj.php?getJson=column&classid=9999',
         method: 'GET',
         dataType: 'json',
         success: (json) => {
@@ -145,9 +145,9 @@ Page({
   },
 	getNew: function () {
 		let that = this;
-		console.log('https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=orderByNew&token=' + getApp().globalData.token);
+		console.log(getApp().globalData.roots + '/e/api/creat/get.php?getJson=orderByNew&token=' + getApp().globalData.token);
 		wx.request({
-			url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=orderByNew&token=' + getApp().globalData.token,
+			url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=orderByNew&token=' + getApp().globalData.token,
 			method: 'GET',
 			dataType: 'json',
 			success: (json) => {
@@ -161,9 +161,9 @@ Page({
 	},
 	getHot:function(){
 			let that = this;
-		console.log('https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=orderByCreated_number&token=' + getApp().globalData.token);
+		console.log(getApp().globalData.roots + '/e/api/creat/get.php?getJson=orderByCreated_number&token=' + getApp().globalData.token);
 			wx.request({
-				url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=orderByCreated_number&token=' + getApp().globalData.token,
+				url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=orderByCreated_number&token=' + getApp().globalData.token,
 				method: 'GET',
 				dataType: 'json',
 				success: (json) => {
@@ -183,7 +183,7 @@ Page({
     let _classid = []
     let _expertListi = []
     wx.request({
-      url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=class&token=' + getApp().globalData.token,
+      url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=class&token=' + getApp().globalData.token,
       method: 'GET',
       dataType: 'json',
       success: (json) => {

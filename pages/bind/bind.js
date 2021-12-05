@@ -43,7 +43,7 @@ Page({
 		console.log("姓名：" + this.data.username + "密码：" + this.data.password);
 		// return false;
 		wx.request({
-			url: 'https://www.yishuzi.com.cn/e/api/yishuzi/bind.php',
+			url: getApp().globalData.roots + '/e/api/yishuzi/bind.php',
 			header: { 'content-type': 'application/x-www-form-urlencoded' },
 			method: 'POST',
 			dataType: 'json',
@@ -79,7 +79,7 @@ Page({
 				} else {
 					let _usernames = this.data.username + '_' + parseInt(Math.random() * 99999);
 					wx.request({
-						url: 'https://www.yishuzi.com.cn/e/api/yishuzi/register.php',
+						url: getApp().globalData.roots + '/e/api/yishuzi/register.php',
 						header: { 'content-type': 'application/x-www-form-urlencoded' },
 						method: 'POST',
 						dataType: 'json',

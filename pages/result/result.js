@@ -48,7 +48,7 @@ Page({
     });
     this.ad();
     wx.request({
-      url: 'https://www.yishuzi.com.cn/shop_xiaochengxu_api/wx-sxqmsj.php?getJson=column&classid=9999',
+      url: getApp().globalData.roots + '/shop_xiaochengxu_api/wx-sxqmsj.php?getJson=column&classid=9999',
         method: 'GET',
         dataType: 'json',
         success: (json) => {
@@ -73,7 +73,7 @@ Page({
 	ad: function () {
 		let that = this;
 		wx.request({
-			url: 'https://www.yishuzi.com.cn/e/api/xiaochengxu/yishuzi_shengcheng/?getJson=ad&adPage=result',
+			url: getApp().globalData.roots + '/e/api/xiaochengxu/yishuzi_shengcheng/?getJson=ad&adPage=result',
 			method: 'GET',
 			dataType: 'json',
 			success: (json) => {

@@ -37,9 +37,9 @@ Page({
 	},
 	getInvite_userid:function(){
 		let that = this;
-		console.log('https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=getInvite_userid&invite_userid=' + this.data.userid + '&token=' + getApp().globalData.token);
+		console.log(getApp().globalData.roots + '/e/api/creat/get.php?getJson=getInvite_userid&invite_userid=' + this.data.userid + '&token=' + getApp().globalData.token);
 		wx.request({
-			url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=getInvite_userid&invite_userid=' + this.data.userid + '&token=' + getApp().globalData.token,
+			url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=getInvite_userid&invite_userid=' + this.data.userid + '&token=' + getApp().globalData.token,
 			method: 'GET',
 			dataType: 'json',
 			success: (json) => {
@@ -53,9 +53,9 @@ Page({
 	},
 	getUserInfo:function(){
 		let that = this;
-		console.log('https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=info&userid=' + this.data.userid +'&token=' + getApp().globalData.token);
+		console.log(getApp().globalData.roots + '/e/api/creat/get.php?getJson=info&userid=' + this.data.userid +'&token=' + getApp().globalData.token);
 		wx.request({
-			url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=info&userid=' + this.data.userid + '&token=' + getApp().globalData.token,
+			url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=info&userid=' + this.data.userid + '&token=' + getApp().globalData.token,
 			method: 'GET',
 			dataType: 'json',
 			success: (json) => {

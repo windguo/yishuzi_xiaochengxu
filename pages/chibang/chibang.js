@@ -7,7 +7,7 @@ Page({
     }
     return {
       title: '来看看我生成的翅膀艺术网名生成 ' + this.data.result,
-      imageUrl: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=showPic&font=1&text=翅膀艺术网名生成&fontSize=24&width=300&height=225&fontColor=ff5a00',
+      imageUrl: getApp().globalData.roots + '/e/api/creat/get.php?getJson=showPic&font=1&text=翅膀艺术网名生成&fontSize=24&width=300&height=225&fontColor=ff5a00',
       success: (res) => {
         wx.showToast({
           title: '转发成功'

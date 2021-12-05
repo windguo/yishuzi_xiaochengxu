@@ -147,7 +147,7 @@ Page({
       return false
     } else {
       wx.request({
-        url: 'https://www.yishuzi.com.cn/shop_xiaochengxu_api/wx-yishuzishengcheng_safe.php?content=' + this.data.name, // 目标服务器url
+        url: getApp().globalData.roots + '/shop_xiaochengxu_api/wx-yishuzishengcheng_safe.php?content=' + this.data.name, // 目标服务器url
         header: {
           'content-type': 'application/x-www-form-urlencoded'
         },

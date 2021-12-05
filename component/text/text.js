@@ -11,6 +11,7 @@ Component({
 		}
 	},
 	data: {
+		infos:{},
 		todayUpdate: 0,
 		total: 0,
 		snewstime: '',
@@ -45,33 +46,15 @@ Component({
 			let that = this;
 			//统计数据
 			wx.request({
-				url: 'https://www.yishuzi.com.cn/e/api/yishuzi/?getJson=total',
+				url: getApp().globalData.roots + '/wxxcx/yishuzishengcheng/total',
 				method: 'GET',
 				dataType: 'json',
 				success: (json) => {
 					this.setData({
-						snewstime: json.data.result.newstime,
-						todayUpdate: json.data.result.toady,
-						total: json.data.result.count,
-						todayRegister: json.data.result.todayRegister,
-						members: json.data.result.members
+						infos: json.data.result
 					})
 				}
 			});
-			wx.request({
-				url: 'https://www.yishuzi.com.cn/e/api/yishuzi/?getJson=member_new&pageSize=1',
-				method: 'GET',
-				dataType: 'json',
-				success: (json) => {
-					console.log('---======------', json.data.result[0])
-					that.setData({
-						registertime: json.data.result[0].registertime,
-						userid: json.data.result[0].userid,
-						username: json.data.result[0].username
-					})
-					wx.hideLoading()
-				}
-			})
 		}
 	}
 }) 

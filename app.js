@@ -34,8 +34,8 @@ App({
     })
   },
   globalData: {
+    roots:'https://api.yishuzi.aishouxie.cn',
     userInfo: null,
-    apiUrl: 'https://www.yishuzi.com.cn/jianjie8_xiaochengxu_api',
     token: 'bnhgftre543erfgrEWERerfdw343rdd43assaFDWEDFDDFf34324213dsewsdfes110'
   }
 })

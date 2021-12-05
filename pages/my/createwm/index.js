@@ -19,7 +19,7 @@ Page({
 			userid: wx.getStorageSync('storageLoginedUserId')
 		});
 		this.setData({
-			url:'https://www.yishuzi.com.cn/e/api/jianjie8_xiaochengxu/yishuzi_xiaochengxu_qrode.php?path=pages%2Fdesign%2Fdesign&scene=userid_'+ this.data.userid +'&width=100'
+			url:getApp().globalData.roots + '/e/api/jianjie8_xiaochengxu/yishuzi_xiaochengxu_qrode.php?path=pages%2Fdesign%2Fdesign&scene=userid_'+ this.data.userid +'&width=100'
 		})
 	},
 	previewImages: function (e) {

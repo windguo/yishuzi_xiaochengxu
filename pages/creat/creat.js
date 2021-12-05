@@ -1192,10 +1192,10 @@ Page({
 		})
 	},
 	upUsefen:function(){
-		console.log('https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=upUsefen&userid=' + this.data.userid + '&token=' + getApp().globalData.token);
+		console.log(getApp().globalData.roots + '/e/api/creat/get.php?getJson=upUsefen&userid=' + this.data.userid + '&token=' + getApp().globalData.token);
 		let that = this;
 		wx.request({
-			url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=upUsefen&userid=' + this.data.userid + '&token=' + getApp().globalData.token,
+			url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=upUsefen&userid=' + this.data.userid + '&token=' + getApp().globalData.token,
 			method: 'GET',
 			dataType: 'json',
 			success: (json) => {
@@ -1228,9 +1228,9 @@ Page({
 		getApp().globalData.globalTitle = e.detail.value;
 	},
   getContent: function (id) {
-    console.log('https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=content&id=' + id + '&token=' + getApp().globalData.token)
+    console.log(getApp().globalData.roots + '/e/api/creat/get.php?getJson=content&id=' + id + '&token=' + getApp().globalData.token)
     wx.request({
-      url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=content&id=' + id + '&token=' + getApp().globalData.token,
+      url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=content&id=' + id + '&token=' + getApp().globalData.token,
       method: 'GET',
       dataType: 'json',
       success: (json) => {
@@ -1250,9 +1250,9 @@ Page({
     })
   },
 	getUserFen:function(){
-		console.log('https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=info&userid=' + this.data.userid + '&token=' + getApp().globalData.token)
+		console.log(getApp().globalData.roots + '/e/api/creat/get.php?getJson=info&userid=' + this.data.userid + '&token=' + getApp().globalData.token)
 		wx.request({
-			url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=info&userid=' + this.data.userid + '&token=' + getApp().globalData.token,
+			url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=info&userid=' + this.data.userid + '&token=' + getApp().globalData.token,
 			method: 'GET',
 			dataType: 'json',
 			success: (json) => {
@@ -1344,9 +1344,9 @@ Page({
 		console.log('nnnnnn', n);
 		let _url;
 		if (n == 0) {
-			_url = 'https://www.yishuzi.com.cn/e/api/creat/yishuzi_shengcheng.php?n=0'
+			_url = getApp().globalData.roots + '/e/api/creat/yishuzi_shengcheng.php?n=0'
 		} else {
-			_url = 'https://www.yishuzi.com.cn/e/api/creat/yishuzi_shengcheng.php?n=1'
+			_url = getApp().globalData.roots + '/e/api/creat/yishuzi_shengcheng.php?n=1'
 		};
 		console.log('_url---', _url);
 		wx.request({

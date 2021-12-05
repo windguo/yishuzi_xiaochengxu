@@ -9,10 +9,10 @@ Page({
     });
     console.log('....options.....',options)
     this.setData({
-      createdImg:'https://www.yishuzi.com.cn/m8Gs_pic/?name=' + options.name
+      createdImg:getApp().globalData.roots + '/m8Gs_pic/?name=' + options.name
     })
     wx.request({
-      url: 'https://www.yishuzi.com.cn/shop_xiaochengxu_api/wx-sxqmsj.php?getJson=column&classid=9999',
+      url: getApp().globalData.roots + '/shop_xiaochengxu_api/wx-sxqmsj.php?getJson=column&classid=9999',
         method: 'GET',
         dataType: 'json',
         success: (json) => {

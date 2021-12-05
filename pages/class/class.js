@@ -17,7 +17,7 @@ Page({
 		let _classid = [];
 		let _expertListi = [];
 		wx.request({
-			url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=class&token=' + getApp().globalData.token,
+			url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=class&token=' + getApp().globalData.token,
 			method: 'GET',
 			dataType: 'json',
 			success: (json) => {

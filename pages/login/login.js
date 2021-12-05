@@ -52,7 +52,7 @@ Page({
 						});
 						//发起网络请求
 						wx.request({
-							url: 'https://www.yishuzi.com.cn/e/api/yishuzi/login.php',
+							url: getApp().globalData.roots + '/e/api/yishuzi/login.php',
 							data: {
 								code: res.code
 							},

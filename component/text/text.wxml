@@ -9,12 +9,12 @@
 				</swiper-item>
 				<swiper-item>
 					<view class="icon icon-profile second">
-						<text>欢迎</text><view class="user">{{username}}</view><text>在</text><span>{{registertime}}</span><text>加入,领取了</text><span>5</span><text>积分</text>
+						<text>欢迎</text><view class="user">{{infos.username}}</view><text>在</text><span>{{infos.registertime}}</span><text>加入,领取了</text><span>5</span><text>积分</text>
 					</view>
 				</swiper-item>
 				<swiper-item>
 					<view class="icon icon-friend_add_light three">
-						今日新增<span>{{todayRegister}}</span>名会员,共有<span>{{members}}</span>名
+						今日新增<span>{{infos.todayRegister}}</span>名会员,共有<span>{{infos.members}}</span>名
 					</view>
 				</swiper-item>
 			</block> 

@@ -51,9 +51,9 @@ Page({
   getListData: function (classid, page) {
     let that = this
     console.log('__page__', this.data.page)
-    console.log('https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=list&token=' + getApp().globalData.token + '&classid=' + classid + '&page=' + page)
+    console.log(getApp().globalData.roots + '/e/api/creat/get.php?getJson=list&token=' + getApp().globalData.token + '&classid=' + classid + '&page=' + page)
     wx.request({
-      url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=list&token=' + getApp().globalData.token + '&classid=' + classid + '&page=' + page,
+      url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=list&token=' + getApp().globalData.token + '&classid=' + classid + '&page=' + page,
       method: 'GET',
       dataType: 'json',
       success: (json) => {
@@ -90,7 +90,7 @@ Page({
       page: that.data.page + 1
     })
     wx.request({
-      url: 'https://www.yishuzi.com.cn/e/api/creat/get.php?getJson=list&token=' + getApp().globalData.token + '&classid=' + this.data.classid + '&page=' + that.data.page,
+      url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=list&token=' + getApp().globalData.token + '&classid=' + this.data.classid + '&page=' + that.data.page,
       method: 'GET',
       dataType: 'json',
       success: (json) => {
