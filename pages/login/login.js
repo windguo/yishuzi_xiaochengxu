@@ -52,45 +52,20 @@ Page({
 						});
 						//发起网络请求
 						wx.request({
-							url: getApp().globalData.roots + '/e/api/yishuzi/login.php',
+							url: getApp().globalData.roots + '/wxxcx/yishuzishengcheng/login',
 							data: {
 								code: res.code
 							},
 							success: (res) => {
 								console.log('login--res.data', res.data);
-								wx.setStorageSync('storageLoginedUserId', res.data.userid);
-								// wx.getStorageSync('storageSessionkey') = res.data.sessionkey;
-								// app.globalData.rnd = res.data.rnd;
+								wx.setStorageSync('storageLoginedUserId', res.data.result.userid);
 								wx.setStorageSync('storageLogined', true);
-								wx.setStorageSync('storageSessionkey', res.data.sessionkey);
-								wx.setStorageSync('storageRnd', res.data.rnd);
-								if (res.data.isbind == 0) {
-									console.log('未绑定账号');
-									wx.navigateTo({
-										url: '../bind/bind'
-									})
-									// that.setData({
-									// 	hiddenmodalput: false
-									// });
-									// console.log('----hiddenmodalput--', that.data.hiddenmodalput);
-								} else {
-									console.log('已经绑定账号');
-									wx.setStorageSync('storageLoginedUsernames', res.data.usernames);
-									wx.setStorageSync('storageRnd', res.data.rnd);
-									wx.getUserInfo({
-										success: function (_res) {
-											console.log('- getUserInfo -', _res.userInfo);
-											wx.setStorageSync('storageLoginedavAtarUrl', _res.userInfo.avatarUrl);
-											wx.setStorageSync('storageLoginedNickName', _res.userInfo.nickName);
-											wx.switchTab({
-												url: '../index/index'
-											});
-										},
-										fail: function () {
-											console.log('failssss');
-										}
-									})
-								};
+								wx.setStorageSync('storageSessionkey', res.data.result.sessionkey);
+								wx.setStorageSync('storageRnd', res.data.result.rnd);
+								// 登录成功后返回首页
+								wx.switchTab({
+									url: '../index/index'
+								});
 								wx.hideLoading();
 							},
 							fail: (res) => {

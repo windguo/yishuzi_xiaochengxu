@@ -34,7 +34,9 @@ App({
     })
   },
   globalData: {
+    aishouxieRoots:'https://api.aishouxie.cn',
     roots:'https://api.yishuzi.aishouxie.cn',
+    globalTitle:'',
     userInfo: null,
     token: 'bnhgftre543erfgrEWERerfdw343rdd43assaFDWEDFDDFf34324213dsewsdfes110'
   }

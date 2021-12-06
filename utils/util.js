@@ -15,7 +15,8 @@ const formatNumber = n => {
 }
 
 function checkIsLogin() {
-	if (!wx.getStorageSync('storageLoginedUsernames')) {
+	console.log('...storageLoginedUserId.....',wx.getStorageSync('storageLoginedUserId'))
+	if (!wx.getStorageSync('storageLoginedUserId')) {
 		wx.redirectTo({
 			url: '/pages/login/login'
 		});

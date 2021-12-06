@@ -11,17 +11,7 @@ Page({
 		invite_userid:0
 	},
 	onLoad: function () {
-		let that = this;
-		wx.getUserInfo({
-			success: function (_res) {
-				console.log('- getUserInfo -', _res.userInfo);
-				that.setData({
-					username: COMMONFN.extract_chinese(_res.userInfo.nickName).substring(0, 3),
-					invite_userid: wx.getStorageSync('storageInviteUserId')
-				})
-				that.confirmM();
-			}
-		})
+		this.confirmM()
 
 	},
 	username: function (e) {

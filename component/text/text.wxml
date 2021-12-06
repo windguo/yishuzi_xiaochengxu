@@ -9,7 +9,7 @@
 				</swiper-item>
 				<swiper-item>
 					<view class="icon icon-profile second">
-						<text>欢迎</text><view class="user">{{infos.username}}</view><text>在</text><span>{{infos.registertime}}</span><text>加入,领取了</text><span>5</span><text>积分</text>
+						<text class="text">欢迎</text><view class="user">{{infos.username}}</view><text class="text">在</text><span class="span">{{infos.registertime}}</span><text class="text">加入,领取了</text><span class="span">5</span><text class="text">积分</text>
 					</view>
 				</swiper-item>
 				<swiper-item>

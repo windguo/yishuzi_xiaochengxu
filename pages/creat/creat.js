@@ -1192,14 +1192,14 @@ Page({
 		})
 	},
 	upUsefen:function(){
-		console.log(getApp().globalData.roots + '/e/api/creat/get.php?getJson=upUsefen&userid=' + this.data.userid + '&token=' + getApp().globalData.token);
+		// console.log(getApp().globalData.roots + '/e/api/creat/get.php?getJson=upUsefen&userid=' + this.data.userid + '&token=' + getApp().globalData.token);
 		let that = this;
 		wx.request({
 			url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=upUsefen&userid=' + this.data.userid + '&token=' + getApp().globalData.token,
 			method: 'GET',
 			dataType: 'json',
 			success: (json) => {
-				console.log('__json__', json.data.result)
+				// console.log('__json__', json.data.result)
 				wx.showModal({
 					content: '恭喜您获得了5积分',
 					cancelText: '返回我的',
@@ -1228,9 +1228,8 @@ Page({
 		getApp().globalData.globalTitle = e.detail.value;
 	},
   getContent: function (id) {
-    console.log(getApp().globalData.roots + '/e/api/creat/get.php?getJson=content&id=' + id + '&token=' + getApp().globalData.token)
     wx.request({
-      url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=content&id=' + id + '&token=' + getApp().globalData.token,
+      url: getApp().globalData.roots + '/wxxcx/yishuzishengcheng/content?id=' + id,
       method: 'GET',
       dataType: 'json',
       success: (json) => {
@@ -1250,17 +1249,16 @@ Page({
     })
   },
 	getUserFen:function(){
-		console.log(getApp().globalData.roots + '/e/api/creat/get.php?getJson=info&userid=' + this.data.userid + '&token=' + getApp().globalData.token)
 		wx.request({
-			url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=info&userid=' + this.data.userid + '&token=' + getApp().globalData.token,
+			url: getApp().globalData.roots + '/wxxcx/yishuzishengcheng/user?userid=' + this.data.userid,
 			method: 'GET',
 			dataType: 'json',
 			success: (json) => {
 				console.log('__jsinfoArrayinfoArrayon__', json.data.result)
 				this.setData({
-					infoArray: json.data.result[0]
+					infoArray: json.data.result
 				});
-				console.log('infoArrayinfoArray--', this.data.infoArray.userfen);
+				// console.log('infoArrayinfoArray--', this.data.infoArray.userfen);
 				wx.hideLoading()
 			}
 		})

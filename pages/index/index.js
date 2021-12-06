@@ -37,21 +37,22 @@ Page({
       hidden: true
     })
   },
-	ad: function () {
-		let that = this;
-		wx.request({
-			url: getApp().globalData.roots + '/e/api/xiaochengxu/yishuzi_shengcheng/?getJson=ad&adPage=index',
-			method: 'GET',
-			dataType: 'json',
-			success: (json) => {
-				console.log('json.data.result---', json)
-				that.setData({
-					contentArrayAd: json.data.result
-				})
-				wx.hideLoading()
-			}
-		})
-	},
+  getAishouxieListData: function () {
+    let that = this
+    wx.request({
+      url: getApp().globalData.aishouxieRoots + '/wxxcx/shop/index',
+      method: 'GET',
+      dataType: 'json',
+      success: (json) => {
+        if (json.data.status == '20000000') {
+          that.setData({
+            newShopArray: json.data.result
+          })
+          wx.hideLoading()
+        }
+      }
+    })
+  },
 	// 更新分享次数
 	upShareNumber: function (userid) {
 		console.log('updateShareNumer');
@@ -85,7 +86,7 @@ Page({
     let that = this
     // 扫码进入的判断开始
     const _scene = options.scene
-    console.log('_scene_scene', _scene)
+    console.log('_scene_', _scene)
     if (Boolean(_scene) == true) {
       if (_scene.indexOf('start_') == 0) {
         let __scene = _scene.substring(6)
@@ -115,42 +116,17 @@ Page({
       }
     }
 		// 扫码进入的判断结束
-		this.ad();
-    // 统计
-    wx.request({
-      url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=countNum&token=' + getApp().globalData.token,
-      method: 'GET',
-      dataType: 'json',
-      success: (json) => {
-        this.setData({
-          total: json.data.result[0].num
-        })
-      }
-    })
-    this.fetchData()
-		this.getNew();
+    this.getNew();
     this.getHot();
-    wx.request({
-      url: getApp().globalData.roots + '/shop_xiaochengxu_api/wx-sxqmsj.php?getJson=column&classid=9999',
-        method: 'GET',
-        dataType: 'json',
-        success: (json) => {
-            console.log('desiginList',json.data);
-            this.setData({
-                objectArray: json.data.result
-            });
-            wx.hideLoading();
-        }
-    })
+    this.getAishouxieListData();
   },
 	getNew: function () {
 		let that = this;
 		wx.request({
-			url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=orderByNew&token=' + getApp().globalData.token,
+			url: getApp().globalData.roots + '/wxxcx/yishuzishengcheng/lists/orderbynew',
 			method: 'GET',
 			dataType: 'json',
 			success: (json) => {
-				console.log('json.data.rehotArrayhotArraysult---', json)
 				that.setData({
 					newArray: json.data.result
 				})
@@ -160,13 +136,11 @@ Page({
 	},
 	getHot:function(){
 			let that = this;
-		console.log(getApp().globalData.roots + '/e/api/creat/get.php?getJson=orderByCreated_number&token=' + getApp().globalData.token);
 			wx.request({
-				url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=orderByCreated_number&token=' + getApp().globalData.token,
+				url: getApp().globalData.roots + '/wxxcx/yishuzishengcheng/lists/orderByCreated_number',
 				method: 'GET',
 				dataType: 'json',
 				success: (json) => {
-					console.log('json.data.rehotArrayhotArraysult---', json)
 					that.setData({
 						hotArray: json.data.result
 					})
@@ -174,32 +148,6 @@ Page({
 				}
 			})
 	},
-  fetchData: function () {
-    var that = this
-    that.setData({
-      hidden: false
-    })
-    let _classid = []
-    let _expertListi = []
-    wx.request({
-      url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=class&token=' + getApp().globalData.token,
-      method: 'GET',
-      dataType: 'json',
-      success: (json) => {
-        console.log('class---', json.data.result)
-        for (var i = 0; i < json.data.result.length; i++) {
-          _expertListi.push(i)
-          _classid.push(json.data.result[i].classid)
-        }
-        that.setData({
-          expertList: json.data.result,
-          expertListi: _expertListi,
-          expertListId: _classid
-        })
-        wx.hideLoading()
-      }
-    })
-  },
   changeIndicatorDots: function (e) {
     this.setData({
       indicatorDots: !this.data.indicatorDots

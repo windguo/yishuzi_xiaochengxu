@@ -1,0 +1,57 @@
+{
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": 0,
+          "name": "index-share=1",
+          "pathName": "pages/design/design",
+          "query": "share=1",
+          "scene": null
+        },
+        {
+          "id": 1,
+          "name": "result",
+          "pathName": "pages/result/result",
+          "query": "createdImg=https://www.yishuzi.com.cn/cache/xiaochengxu-20190126-15484910229434.png&width=300&height=100"
+        },
+        {
+          "id": 2,
+          "name": "classid=3",
+          "pathName": "pages/list/list",
+          "query": "classid=6&classname=66666666",
+          "scene": null
+        },
+        {
+          "id": 3,
+          "name": "my",
+          "pathName": "pages/my/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 4,
+          "name": "design_single",
+          "pathName": "pages/design_single/design",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/creat/creat",
+          "pathName": "pages/creat/creat",
+          "query": "id=8049",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

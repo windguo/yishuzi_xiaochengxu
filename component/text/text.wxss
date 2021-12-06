@@ -19,7 +19,7 @@
 	font-size: 34rpx;
 	padding:0 40rpx;
 }
-.textwrap .textUp .icon span{
+.textwrap .textUp .icon .span{
 	color: #ff0;
 	font-weight: 300;
 }
@@ -40,8 +40,8 @@
 	background: #e15f41;
 	color: #fff;
 }
-.second text,
-.second span{
+.second .text,
+.second .span{
 	white-space: nowrap;
 }
 .user{
