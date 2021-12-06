@@ -3,13 +3,8 @@
 	<swiper class='textUp' vertical="true" autoplay="true" circular="true" interval="5000" display-multiple-items='1'>
 			<block wx:for-index="idx" wx:for='{{textData}}'>
 				<swiper-item>
-					<view class="icon icon-notice first">
-						微信授权成功送<span>5</span>积分,每生成一次扣<span>1</span>积分
-					</view>
-				</swiper-item>
-				<swiper-item>
 					<view class="icon icon-profile second">
-						<text class="text">欢迎</text><view class="user">{{infos.username}}</view><text class="text">在</text><span class="span">{{infos.registertime}}</span><text class="text">加入,领取了</text><span class="span">5</span><text class="text">积分</text>
+						<text class="text">欢迎</text><view class="user">{{infos.username}}</view><text class="text">在</text><span class="span">{{infos.registertime}}</span><text class="text">加入</text>
 					</view>
 				</swiper-item>
 				<swiper-item>

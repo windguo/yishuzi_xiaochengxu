@@ -10,24 +10,6 @@
 		</view>
 	</view>
 	<view class="list">
-		<navigator url="../about/about" hover-class="navigator-hover">
-				<view class="flex">
-					<view class="it">
-						<text class="icon icon-info"></text>
-						关于我们
-					</view>
-					<text class="r icon icon-right"></text>
-				</view>
-		</navigator>
-		<navigator url="../createwm/index" hover-class="navigator-hover">
-				<view class="flex">
-					<view class="it">
-						<text class="icon icon-info"></text>
-						生成我的推广码
-					</view>
-					<text class="r icon icon-right"></text>
-				</view>
-		</navigator>
 		<view class="flex" bindtap='loginout'>
 			<view class="it">
 				<text class="icon icon-out"></text>

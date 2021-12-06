@@ -45,18 +45,6 @@
 				"text": "分类"
 			},
 			{
-				"pagePath": "pages/soft/index/index",
-				"iconPath": "static/images/ic_free.png",
-				"selectedIconPath": "static/images/ic_free_active.png",
-				"text": "免费签名"
-			},
-			{
-				"pagePath": "pages/design/design",
-				"iconPath": "static/images/ic_design.png",
-				"selectedIconPath": "static/images/ic_design_active.png",
-				"text": "签名案例"
-			},
-			{
 				"pagePath": "pages/my/index/index",
 				"iconPath": "static/images/my_light.png",
 				"selectedIconPath": "static/images/my_light_active.png",

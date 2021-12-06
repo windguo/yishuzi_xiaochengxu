@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -19,20 +20,18 @@
           "scene": null
         },
         {
-          "id": 1,
           "name": "result",
           "pathName": "pages/result/result",
-          "query": "createdImg=https://www.yishuzi.com.cn/cache/xiaochengxu-20190126-15484910229434.png&width=300&height=100"
-        },
-        {
-          "id": 2,
-          "name": "classid=3",
-          "pathName": "pages/list/list",
-          "query": "classid=6&classname=66666666",
+          "query": "createdImg=https://api.yishuzi.aishouxie.cn/cache/xiaochengxu-20211206-16387961805842.png&width=300&height=100",
           "scene": null
         },
         {
-          "id": 3,
+          "name": "classid=1",
+          "pathName": "pages/list/list",
+          "query": "classid=1",
+          "scene": null
+        },
+        {
           "name": "my",
           "pathName": "pages/my/index/index",
           "query": "",
@@ -49,6 +48,12 @@
           "name": "pages/creat/creat",
           "pathName": "pages/creat/creat",
           "query": "id=8049",
+          "scene": null
+        },
+        {
+          "name": "pages/class/class",
+          "pathName": "pages/class/class",
+          "query": "",
           "scene": null
         }
       ]

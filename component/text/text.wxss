@@ -43,6 +43,7 @@
 .second .text,
 .second .span{
 	white-space: nowrap;
+	margin:0 5rpx;
 }
 .user{
 	color: #ff0;
@@ -50,6 +51,7 @@
 	max-width: 140rpx;
 	overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+	white-space: nowrap;
+	margin:0 5rpx;
 }
 /* 文字向上滚动结束 */

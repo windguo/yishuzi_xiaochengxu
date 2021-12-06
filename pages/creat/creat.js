@@ -1192,10 +1192,9 @@ Page({
 		})
 	},
 	upUsefen:function(){
-		// console.log(getApp().globalData.roots + '/e/api/creat/get.php?getJson=upUsefen&userid=' + this.data.userid + '&token=' + getApp().globalData.token);
 		let that = this;
 		wx.request({
-			url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=upUsefen&userid=' + this.data.userid + '&token=' + getApp().globalData.token,
+			url: getApp().globalData.roots + '/wxxcx/yishuzishengcheng/user/upUsefen?userid=' + this.data.userid,
 			method: 'GET',
 			dataType: 'json',
 			success: (json) => {
@@ -1342,9 +1341,9 @@ Page({
 		console.log('nnnnnn', n);
 		let _url;
 		if (n == 0) {
-			_url = getApp().globalData.roots + '/e/api/creat/yishuzi_shengcheng.php?n=0'
+			_url = getApp().globalData.roots + '/wxxcx/yishuzishengcheng/created?n=0'
 		} else {
-			_url = getApp().globalData.roots + '/e/api/creat/yishuzi_shengcheng.php?n=1'
+			_url = getApp().globalData.roots + '/wxxcx/yishuzishengcheng/created?n=1'
 		};
 		console.log('_url---', _url);
 		wx.request({

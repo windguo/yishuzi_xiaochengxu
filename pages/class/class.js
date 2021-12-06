@@ -17,7 +17,7 @@ Page({
 		let _classid = [];
 		let _expertListi = [];
 		wx.request({
-			url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=class&token=' + getApp().globalData.token,
+			url: getApp().globalData.roots + '/wxxcx/yishuzishengcheng/column',
 			method: 'GET',
 			dataType: 'json',
 			success: (json) => {

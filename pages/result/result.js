@@ -46,21 +46,10 @@ Page({
 			width: options.width,
 			height: options.height
     });
-    this.ad();
-    wx.request({
-      url: getApp().globalData.roots + '/shop_xiaochengxu_api/wx-sxqmsj.php?getJson=column&classid=9999',
-        method: 'GET',
-        dataType: 'json',
-        success: (json) => {
-            console.log('desiginList',json.data);
-            this.setData({
-                objectArray: json.data.result
-            });
-            wx.hideLoading();
-        }
-    })
+    this.getAishouxieListData()
   },
   data: {
+    newShopArray:[],
     objectArray:[],
     createdImg: '',
     shareTempFilePath: '',
@@ -70,21 +59,22 @@ Page({
     width: 300,
     height: 150
   },
-	ad: function () {
-		let that = this;
-		wx.request({
-			url: getApp().globalData.roots + '/e/api/xiaochengxu/yishuzi_shengcheng/?getJson=ad&adPage=result',
-			method: 'GET',
-			dataType: 'json',
-			success: (json) => {
-				console.log('json.data.result---', json)
-				that.setData({
-					contentArrayAd: json.data.result
-				})
-				wx.hideLoading()
-			}
-		})
-	},
+  getAishouxieListData: function () {
+    let that = this
+    wx.request({
+      url: getApp().globalData.aishouxieRoots + '/wxxcx/shop/index',
+      method: 'GET',
+      dataType: 'json',
+      success: (json) => {
+        if (json.data.status == '20000000') {
+          that.setData({
+            newShopArray: json.data.result
+          })
+          wx.hideLoading()
+        }
+      }
+    })
+  },
   previewImage: function (e) {
     console.log('eee', e)
     var current = e.target.dataset.src

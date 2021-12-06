@@ -37,15 +37,14 @@ Page({
 	},
 	getInvite_userid:function(){
 		let that = this;
-		console.log(getApp().globalData.roots + '/e/api/creat/get.php?getJson=getInvite_userid&invite_userid=' + this.data.userid + '&token=' + getApp().globalData.token);
 		wx.request({
-			url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=getInvite_userid&invite_userid=' + this.data.userid + '&token=' + getApp().globalData.token,
+			url: getApp().globalData.roots + '/wxxcx/yishuzishengcheng/user/getInvite_userid?invite_userid=' + this.data.userid,
 			method: 'GET',
 			dataType: 'json',
 			success: (json) => {
 				console.log('num---', json.data.result.num)
 				that.setData({
-					num: json.data.result.num
+					num: json.data.result.total
 				})
 				wx.hideLoading()
 			}
@@ -53,15 +52,14 @@ Page({
 	},
 	getUserInfo:function(){
 		let that = this;
-		console.log(getApp().globalData.roots + '/e/api/creat/get.php?getJson=info&userid=' + this.data.userid +'&token=' + getApp().globalData.token);
 		wx.request({
-			url: getApp().globalData.roots + '/e/api/creat/get.php?getJson=info&userid=' + this.data.userid + '&token=' + getApp().globalData.token,
+			url: getApp().globalData.roots + '/wxxcx/yishuzishengcheng/user?userid=' + this.data.userid,
 			method: 'GET',
 			dataType: 'json',
 			success: (json) => {
-				console.log('userinfo---', json.data.result[0])
+				console.log('userinfo---', json.data.result)
 				that.setData({
-					info: json.data.result[0]
+					info: json.data.result
 				})
 				wx.hideLoading()
 			}
