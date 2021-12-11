@@ -34,7 +34,7 @@ App({
     })
   },
   globalData: {
-    aishouxieRoots:'https://api.aishouxie.cn',
+    aishouxie_roots:'https://api.aishouxie.cn',
     roots:'https://api.yishuzi.aishouxie.cn',
     globalTitle:'',
     userInfo: null,

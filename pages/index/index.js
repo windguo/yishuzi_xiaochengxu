@@ -37,22 +37,6 @@ Page({
       hidden: true
     })
   },
-  getAishouxieListData: function () {
-    let that = this
-    wx.request({
-      url: getApp().globalData.aishouxieRoots + '/wxxcx/shop/index',
-      method: 'GET',
-      dataType: 'json',
-      success: (json) => {
-        if (json.data.status == '20000000') {
-          that.setData({
-            newShopArray: json.data.result
-          })
-          wx.hideLoading()
-        }
-      }
-    })
-  },
 	// 更新分享次数
 	upShareNumber: function (userid) {
 		console.log('updateShareNumer');
@@ -118,7 +102,6 @@ Page({
 		// 扫码进入的判断结束
     this.getNew();
     this.getHot();
-    this.getAishouxieListData();
   },
 	getNew: function () {
 		let that = this;

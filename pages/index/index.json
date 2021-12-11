@@ -1,6 +1,7 @@
 {
   "usingComponents": {
 		"header": "/component/header/header",
-		"component_text": "/component/text/text"
+		"component_text": "/component/text/text",
+		"component_shoplist": "/component/shoplist/index"
 	}
 }

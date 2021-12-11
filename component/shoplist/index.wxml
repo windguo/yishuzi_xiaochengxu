@@ -1,0 +1,23 @@
+<view class="list">
+			<view class="hd">
+				<h2 class="title">原创纯手写设计套餐</h2>
+				<view class="more">
+					<view class="iconfont icon-gengduo"></view>
+				</view>
+			</view>
+			<view class="bd">
+				<view class="box" wx:for="{{newShopArray}}" wx:key>
+					<navigator target="miniProgram" open-type="navigate" app-id="wx61c437bbdea20c24"  extra-data="" version="release" path="/pages/hall/detail/index?classid={{item.classid}}&id={{item.id}}">
+						<image src="{{item.titlepic}}" class="img radius" mode="widthFix"></image>
+						<view class="atitle">
+							<h3 class="title">{{item.title}}</h3>
+						</view>
+					</navigator>
+					<view class="ft">
+						<h3 class="price">
+							优惠价:<span class="red">¥{{item.price}}</span>
+						</h3>
+					</view>
+				</view>
+			</view>
+		</view>

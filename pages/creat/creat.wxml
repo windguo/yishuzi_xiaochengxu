@@ -61,9 +61,11 @@
             <button class="sbutton" formType="submit"> 立即生成艺术字 </button>
         </view>
     </form>
-		<view class="copyright">
-			艺术字生成的艺术字生成工具仅为字体预览和学习之用，如需用于商业用途请联系字体公司购买授权。
-		</view>
+    <ad unit-id="adunit-b3d0ba1489481a35" ad-type="video" ad-theme="white"></ad>
+    <view class="copyright">
+        艺术字生成的艺术字生成工具仅为字体预览和学习之用，如需用于商业用途请联系字体公司购买授权。
+    </view>
+    <component_shoplist />
 </view>
 <view class="contact">
 	<view class="a">

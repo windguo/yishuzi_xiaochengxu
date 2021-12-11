@@ -46,7 +46,6 @@ Page({
 			width: options.width,
 			height: options.height
     });
-    this.getAishouxieListData()
   },
   data: {
     newShopArray:[],
@@ -58,22 +57,6 @@ Page({
 		duration: 500,
     width: 300,
     height: 150
-  },
-  getAishouxieListData: function () {
-    let that = this
-    wx.request({
-      url: getApp().globalData.aishouxieRoots + '/wxxcx/shop/index',
-      method: 'GET',
-      dataType: 'json',
-      success: (json) => {
-        if (json.data.status == '20000000') {
-          that.setData({
-            newShopArray: json.data.result
-          })
-          wx.hideLoading()
-        }
-      }
-    })
   },
   previewImage: function (e) {
     console.log('eee', e)
