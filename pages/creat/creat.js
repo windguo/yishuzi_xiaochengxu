@@ -1200,7 +1200,7 @@ Page({
 			success: (json) => {
 				// console.log('__json__', json.data.result)
 				wx.showModal({
-					content: '恭喜您获得了5积分',
+					content: '恭喜您获得了2积分',
 					cancelText: '返回我的',
 					cancelColor: '#00b894',
 					confirmText: '确定',
@@ -1279,7 +1279,7 @@ Page({
 		}else if (this.data.infoArray.userfen < 1) {
 			wx.showModal({
 				title: '您的积分不足',
-				content: '点击【获取积分】观看视频完毕后即可获得5积分哦',
+				content: '点击【获取积分】观看视频完毕后即可获得2积分哦',
 				showCancel: false,
 				confirmText: '获取积分',
 				confirmColor: '#e17055',
@@ -1295,7 +1295,7 @@ Page({
 		}else{
 			wx.showModal({
 				title: '将扣除1积分,确定吗？',
-				content: '点击【获取积分】观看视频完毕后即可获得5积分哦',
+				content: '点击【获取积分】观看视频完毕后即可获得2积分哦',
 				cancelText: '获取积分',
 				cancelColor: '#00b894',
 				confirmText: '继续生成',
@@ -1311,7 +1311,7 @@ Page({
 						} else if (that.data.infoArray.userfen < 1){
 							wx.showModal({
 								title: '您的积分不足',
-								content: '点击【获取积分】观看视频完毕后即可获得5积分哦',
+								content: '点击【获取积分】观看视频完毕后即可获得2积分哦',
 								showCancel: false,
 								confirmText: '获取积分',
 								confirmColor: '#e17055',
